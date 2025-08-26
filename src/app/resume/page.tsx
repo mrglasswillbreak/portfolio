@@ -286,7 +286,7 @@ export default function Resume() {
             >
               My Resume
             </motion.h1>
-            
+
             <motion.p
               className="text-primary-foreground/70 text-xl md:text-2xl max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
@@ -315,13 +315,12 @@ export default function Resume() {
             {/* Glass morphism background */}
             <div className="absolute inset-0 bg-gradient-to-r from-card/20 via-card/30 to-card/20 backdrop-blur-xl rounded-2xl border border-primary/20" />
             <div className="relative flex flex-wrap justify-center gap-4 p-6">
-              
               <motion.button
                 onClick={handleZoomOut}
                 className="group relative flex items-center gap-2 px-5 py-3 rounded-xl overflow-hidden transition-all duration-300 border border-primary/30 bg-primary/10 hover:bg-primary/20"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.2)"
+                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.2)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: -20 }}
@@ -330,24 +329,28 @@ export default function Resume() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <HiZoomOut className="w-4 h-4 text-primary relative z-10" />
-                <span className="text-primary-foreground font-medium relative z-10">Zoom Out</span>
+                <span className="text-primary-foreground font-medium relative z-10">
+                  Zoom Out
+                </span>
               </motion.button>
 
-              <motion.div 
+              <motion.div
                 className="flex items-center px-5 py-3 bg-card/50 backdrop-blur-sm rounded-xl border border-primary/20"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
-                <span className="text-primary-foreground font-mono font-semibold text-lg">{zoom}%</span>
+                <span className="text-primary-foreground font-mono font-semibold text-lg">
+                  {zoom}%
+                </span>
               </motion.div>
 
               <motion.button
                 onClick={handleZoomIn}
                 className="group relative flex items-center gap-2 px-5 py-3 rounded-xl overflow-hidden transition-all duration-300 border border-primary/30 bg-primary/10 hover:bg-primary/20"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.2)"
+                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.2)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 20 }}
@@ -356,15 +359,17 @@ export default function Resume() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <HiZoomIn className="w-4 h-4 text-primary relative z-10" />
-                <span className="text-primary-foreground font-medium relative z-10">Zoom In</span>
+                <span className="text-primary-foreground font-medium relative z-10">
+                  Zoom In
+                </span>
               </motion.button>
 
               <motion.button
                 onClick={toggleFullscreen}
                 className="group relative flex items-center gap-2 px-5 py-3 rounded-xl overflow-hidden transition-all duration-300 border border-secondary/30 bg-secondary/10 hover:bg-secondary/20"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 8px 25px hsl(var(--secondary) / 0.2)"
+                  boxShadow: "0 8px 25px hsl(var(--secondary) / 0.2)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: -20 }}
@@ -383,9 +388,9 @@ export default function Resume() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex items-center gap-2 px-5 py-3 rounded-xl overflow-hidden transition-all duration-300 border border-secondary/30 bg-card/30 hover:bg-secondary/10"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  borderColor: "hsl(var(--secondary) / 0.5)"
+                  borderColor: "hsl(var(--secondary) / 0.5)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 20 }}
@@ -393,20 +398,23 @@ export default function Resume() {
                 transition={{ duration: 0.5, delay: 1.2 }}
               >
                 <HiExternalLink className="w-4 h-4 text-secondary" />
-                <span className="text-primary-foreground font-medium">Open in New Tab</span>
+                <span className="text-primary-foreground font-medium">
+                  Open in New Tab
+                </span>
               </motion.a>
 
               <motion.a
                 href={PDF_URL}
                 download="Aarab_Nishchal_Resume.pdf"
                 className="group relative flex items-center gap-2 px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 font-medium text-white"
-                style={{ 
-                  background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%)",
-                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.3)"
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%)",
+                  boxShadow: "0 8px 25px hsl(var(--primary) / 0.3)",
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 12px 35px hsl(var(--primary) / 0.4)"
+                  boxShadow: "0 12px 35px hsl(var(--primary) / 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -417,7 +425,6 @@ export default function Resume() {
                 <HiDownload className="w-4 h-4 relative z-10" />
                 <span className="relative z-10">Download PDF</span>
               </motion.a>
-              
             </div>
           </motion.div>
 
@@ -426,21 +433,21 @@ export default function Resume() {
             className="relative overflow-hidden rounded-3xl shadow-2xl"
             initial={{ opacity: 0, y: 60, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
+            transition={{
               duration: 1,
               delay: 1.4,
-              ease: [0.25, 0.46, 0.45, 0.94]
+              ease: [0.25, 0.46, 0.45, 0.94],
             }}
             whileHover={{
               scale: 1.02,
-              transition: { duration: 0.3 }
+              transition: { duration: 0.3 },
             }}
           >
             {/* Glass morphism background with gradient border */}
             <div className="absolute inset-0 bg-gradient-to-br from-card/30 via-card/20 to-card/30 backdrop-blur-xl" />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 rounded-3xl" />
             <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 rounded-3xl bg-clip-border" />
-            
+
             <PDFErrorBoundary pdfUrl={PDF_URL}>
               {/* PDF Viewer with enhanced styling */}
               <motion.div
@@ -450,96 +457,99 @@ export default function Resume() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-              {isLoading && (
-                <motion.div 
-                  className="pdf-loading relative"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {/* Animated background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 animate-pulse" />
-                  
-                  <div className="relative flex flex-col items-center justify-center h-full space-y-6">
-                    {/* Enhanced loading spinner */}
-                    <div className="relative">
-                      <motion.div
-                        className="w-16 h-16 rounded-full border-4 border-primary/20"
-                        style={{
-                          borderTopColor: "hsl(var(--primary))",
-                          borderRightColor: "hsl(var(--secondary))",
-                        }}
-                        animate={{ rotate: 360 }}
-                        transition={{
-                          duration: 1,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                      />
-                      <motion.div
-                        className="absolute inset-2 w-12 h-12 rounded-full border-2 border-secondary/30"
-                        style={{
-                          borderLeftColor: "hsl(var(--secondary))",
-                          borderBottomColor: "hsl(var(--primary))",
-                        }}
-                        animate={{ rotate: -360 }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                      />
-                    </div>
-                    
-                    <motion.div
-                      className="text-primary text-2xl font-semibold"
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      Loading PDF...
-                    </motion.div>
-                    
-                    <motion.div
-                      className="text-primary-foreground/60 text-lg text-center max-w-md"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      Method: <span className="font-mono text-secondary">{viewMethod}</span>
-                      {retryCount > 0 && (
-                        <span className="block mt-1 text-sm">
-                          Attempt {retryCount + 1} of {MAX_RETRIES + 1}
-                        </span>
-                      )}
-                    </motion.div>
-                    
-                    {/* Enhanced progress bar */}
-                    <div className="w-80 max-w-full">
-                      <div className="w-full bg-primary/10 rounded-full h-2 overflow-hidden">
-                        <motion.div 
-                          className="h-2 rounded-full bg-gradient-to-r from-primary to-secondary"
-                          initial={{ width: "0%" }}
-                          animate={{ 
-                            width: `${Math.min(100, (retryCount + 1) * 33)}%`
+                {isLoading && (
+                  <motion.div
+                    className="pdf-loading relative"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {/* Animated background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 animate-pulse" />
+
+                    <div className="relative flex flex-col items-center justify-center h-full space-y-6">
+                      {/* Enhanced loading spinner */}
+                      <div className="relative">
+                        <motion.div
+                          className="w-16 h-16 rounded-full border-4 border-primary/20"
+                          style={{
+                            borderTopColor: "hsl(var(--primary))",
+                            borderRightColor: "hsl(var(--secondary))",
                           }}
-                          transition={{ duration: 0.8, ease: "easeOut" }}
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                        />
+                        <motion.div
+                          className="absolute inset-2 w-12 h-12 rounded-full border-2 border-secondary/30"
+                          style={{
+                            borderLeftColor: "hsl(var(--secondary))",
+                            borderBottomColor: "hsl(var(--primary))",
+                          }}
+                          animate={{ rotate: -360 }}
+                          transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
                         />
                       </div>
-                      <div className="flex justify-between mt-2 text-xs text-primary-foreground/40">
-                        <span>iframe</span>
-                        <span>object</span>
-                        <span>embed</span>
+
+                      <motion.div
+                        className="text-primary text-2xl font-semibold"
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        Loading PDF...
+                      </motion.div>
+
+                      <motion.div
+                        className="text-primary-foreground/60 text-lg text-center max-w-md"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        Method:{" "}
+                        <span className="font-mono text-secondary">
+                          {viewMethod}
+                        </span>
+                        {retryCount > 0 && (
+                          <span className="block mt-1 text-sm">
+                            Attempt {retryCount + 1} of {MAX_RETRIES + 1}
+                          </span>
+                        )}
+                      </motion.div>
+
+                      {/* Enhanced progress bar */}
+                      <div className="w-80 max-w-full">
+                        <div className="w-full bg-primary/10 rounded-full h-2 overflow-hidden">
+                          <motion.div
+                            className="h-2 rounded-full bg-gradient-to-r from-primary to-secondary"
+                            initial={{ width: "0%" }}
+                            animate={{
+                              width: `${Math.min(100, (retryCount + 1) * 33)}%`,
+                            }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                          />
+                        </div>
+                        <div className="flex justify-between mt-2 text-xs text-primary-foreground/40">
+                          <span>iframe</span>
+                          <span>object</span>
+                          <span>embed</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              )}
-              
-              {pdfError ? (
+                  </motion.div>
+                )}
+
+                {pdfError ? (
                   <div className="flex flex-col justify-center items-center h-full p-8 text-center">
                     <div className="text-destructive text-lg mb-4">
                       Unable to display PDF preview
@@ -687,7 +697,7 @@ export default function Resume() {
           >
             {/* Glass morphism background */}
             <div className="absolute inset-0 bg-gradient-to-r from-card/10 via-card/20 to-card/10 backdrop-blur-xl rounded-2xl border border-primary/10" />
-            
+
             <div className="relative text-center p-8 space-y-4">
               <motion.p
                 className="text-primary-foreground/70 text-lg font-medium"
@@ -695,10 +705,11 @@ export default function Resume() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.9 }}
               >
-                💡 Use the controls above to zoom, view fullscreen, or download the PDF
+                💡 Use the controls above to zoom, view fullscreen, or download
+                the PDF
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-wrap justify-center gap-6 text-sm"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -711,30 +722,35 @@ export default function Resume() {
                     {retryCount > 0 && ` (attempt ${retryCount + 1})`}
                   </span>
                 </div>
-                
+
                 {browserInfo.isMobile && (
                   <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20">
                     <span>📱</span>
-                    <span className="text-primary-foreground/60">Mobile detected</span>
+                    <span className="text-primary-foreground/60">
+                      Mobile detected
+                    </span>
                   </div>
                 )}
-                
+
                 {!browserInfo.canViewPDF && (
                   <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                     <span>⚠️</span>
-                    <span className="text-amber-400">Limited PDF support detected</span>
+                    <span className="text-amber-400">
+                      Limited PDF support detected
+                    </span>
                   </div>
                 )}
               </motion.div>
-              
+
               <motion.p
                 className="text-primary-foreground/50 text-sm max-w-2xl mx-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 2.1 }}
               >
-                If the PDF doesn&apos;t display properly, try the &quot;Open in New Tab&quot; button 
-                for the best viewing experience in your browser&apos;s built-in PDF reader.
+                If the PDF doesn&apos;t display properly, try the &quot;Open in
+                New Tab&quot; button for the best viewing experience in your
+                browser&apos;s built-in PDF reader.
               </motion.p>
             </div>
           </motion.div>
