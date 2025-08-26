@@ -16,6 +16,7 @@ import {
 } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
+  applicationName: "Aarab Nishchal",
   title: "Aarab Nishchal",
   description:
     "Aarab Nishchal is a student developer passionate about building modern web apps with Next.js, React, and open-source tools. Explore his projects, experiments, and developer portfolio.",
@@ -101,7 +102,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>{`${metadata.title}`}</title>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
