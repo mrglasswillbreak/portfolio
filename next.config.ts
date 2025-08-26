@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static exports for better SEO performance
   images: {
     unoptimized: false, // Keep image optimization enabled
     // domains: ["aarab.vercel.app"],
@@ -15,13 +14,11 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Compress responses
   compress: true,
 
-  // Remove experimental optimizeCss as it's causing build issues
-  // experimental: {
-  //   optimizeCss: true,
-  // },
+  experimental: {
+    optimizeCss: true,
+  },
 
   // Headers for better SEO and security
   async headers() {
@@ -43,7 +40,6 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Allow PDFs to be embedded
       {
         source: "/docs/:path*",
         headers: [
@@ -81,6 +77,15 @@ const nextConfig: NextConfig = {
         source: "/directresume",
         destination: "/docs/Aarab_Nishchal_Resume.pdf",
         permanent: true,
+      },
+      {
+        source: "/direct-resume",
+        destination: "/docs/Aarab_Nishchal_Resume.pdf",
+        permanent: true,
+      },
+      {
+        source: "/github",
+        destination: "www.github.com/aarabii",
       },
     ];
   },
