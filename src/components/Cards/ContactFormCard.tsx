@@ -62,6 +62,12 @@ export const ContactFormCard = () => {
       loading: "Sending your message...",
       success: "Message has been received! I'll get back to you soon.",
       error: (error) => {
+        if (error.message.includes("not valid")) {
+          return "❌ The email address you entered is not valid (".concat(
+            formValues.senderEmail,
+            "). Please use a real email."
+          );
+        }
         return (
           error.message ||
           "An error occurred while sending your message. Please try again later."
