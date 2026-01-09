@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 
 import { inter, mono, nasalization, quentine } from "./fonts";
 
-import { keywords } from "@/constant";
+import { Keywords } from "@/constant";
 import {
   generatePersonStructuredData,
   generateWebsiteStructuredData,
@@ -16,7 +16,7 @@ import {
 
 export const metadata: Metadata = {
   applicationName: "Aarab Nishchal",
-  title: "Aarab Nishchal",
+  title: "Aarab Nishchal | Full Stack Developer & AI Engineer",
   description:
     "Aarab Nishchal is a student developer passionate about building modern web apps with Next.js, React, and open-source tools. Explore his projects, experiments, and developer portfolio.",
   authors: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   category: "Portfolio",
   classification: "Software Development",
-  keywords: keywords,
+  keywords: Keywords,
   metadataBase: new URL("https://aarab.vercel.app"),
 
 
@@ -51,11 +51,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
-    other: {
-      "me": ["mailto:aarab.nishchal@gmail.com"],
-    },
+    google: "1c8e801d4931baa4",
   },
   appleWebApp: {
     capable: true,
@@ -96,7 +92,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 
   openGraph: {
-    title: "Aarab Nishchal | Student Developer & Creative Coder",
+    title: "Aarab Nishchal",
     description:
       "Explore Aarab Nishchal’s portfolio featuring projects in React, Next.js, AI, and developer tools. Discover a world of creative web applications and open-source experiments.",
     url: "https://aarab.vercel.app",
@@ -112,18 +108,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  other: {
-    "article:published_time": "2024-01-01T00:00:00.000Z",
-    "article:modified_time": new Date().toISOString(),
-  },
+
 
   twitter: {
     card: "summary_large_image",
-    title: "Aarab Nishchal | Student Developer",
+    title: "Aarab Nishchal",
     description:
       "Check out Aarab Nishchal’s personal portfolio and dev projects using Next.js, React, Tailwind, and modern web tech.",
     images: ["/images/thumbnail.png"],
     creator: "@aarab_ii",
+    site: "@aarab_ii",
   },
 };
 

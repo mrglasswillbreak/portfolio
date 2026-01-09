@@ -8,8 +8,6 @@ import { selfData } from "@/constant";
 import Link from "next/link";
 import { LuMapPinned } from "react-icons/lu";
 
-
-
 export const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -20,6 +18,7 @@ export const About = () => {
 
   return (
     <section
+      id="about"
       ref={ref}
       className="py-24 max-w-6xl mx-auto relative overflow-hidden"
     >
@@ -35,7 +34,7 @@ export const About = () => {
             }}
           >
             <motion.div
-              className="relative group"
+              className="relative group w-full"
               whileHover={{
                 scale: 1.02,
                 y: -4,
@@ -48,7 +47,7 @@ export const About = () => {
               }}
             >
               <div
-                className="w-full max-w-md h-80 rounded-2xl overflow-hidden relative glass-card border-2 group/image"
+                className="w-full max-w-md h-80 rounded-2xl overflow-hidden relative  border-2 group/image"
                 style={{ borderColor: "hsl(var(--glass-border))" }}
               >
                 <motion.div

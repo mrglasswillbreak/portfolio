@@ -1,12 +1,13 @@
 export const experienceData = [
   {
-    role: "Content Development Intern (Tech)",
+    role: "Software Development Engineer Intern",
     year: "Sep'24 - Present",
     description: [
-      "Curated and crafted 6 - 12 coding challenges daily with the finesse of a quizmaster and the precision of a compiler, ensuring each problem was unique enough to confuse even your overconfident CS friend.",
-      "Collaborated with backend teams like a bug bounty hunter, eliminating 400+ data related issues in a two week sprint basically played whack a bug at enterprise scale.",
-      "Transformed abstract concepts into developerfriendly content, marrying technical depth with educational clarity, while secretly flexing my stack knowledge across AI and code logic.",
+      "Optimized the platforms code execution engine by analyzing backend bottlenecks in 300+ algorithmic problems; refactored C++/Java logic to reduce average runtime latency by 15%.",
+      "Architected internal automation pipelines to validate problem constraints and test cases, ensuring 99.9% uptime for the problem statement delivery API during high-traffic hackathons.",
+      "Engineered comprehensive test suites for technical assessments, achieving 100% code coverage on edge cases to eliminate false positives in candidate grading."
     ],
+
     company: "UnStop",
     technologies: [
       "Inhouse CMS",
