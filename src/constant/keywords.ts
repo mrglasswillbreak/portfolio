@@ -1,9 +1,9 @@
 const names = [
-  "Aarab Nishchal",
-  "Aarab Nishchal Portfolio",
-  "Aarabii",
-  "Aarab Nishchal KIIT",
-  "Aarab Nishchal Bhubaneswar",
+  "mrglasswillbreak",
+  "mrglasswillbreak Portfolio",
+  "mrglasswillbreak",
+  "mrglasswillbreak GitHub",
+  "mrglasswillbreak Remote",
 ];
 
 const roles = [
@@ -74,8 +74,8 @@ const locations = [
   "NCR",
   "Delhi NCR",
   "Gurgaon",
-  "Bhubaneswar",
-  "Odisha",
+  "Remote",
+  "Worldwide",
   "Bangalore",
   "Remote",
   "Worldwide"

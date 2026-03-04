@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api", "/private"],
       },
     ],
-    sitemap: "https://aarab.vercel.app/sitemap.xml",
+    sitemap: "https://github.com/mrglasswillbreak",
   };
 }

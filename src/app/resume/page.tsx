@@ -147,7 +147,7 @@ export default function Resume() {
 
               <motion.a
                 href={PDF_URL}
-                download="Aarab_Nishchal_Resume.pdf"
+                download="resume.pdf"
                 className="group relative flex items-center gap-2 px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 font-medium text-primary-foreground"
                 style={{
                   background:

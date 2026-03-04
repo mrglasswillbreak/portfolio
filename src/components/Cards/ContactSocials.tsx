@@ -10,32 +10,42 @@ import { selfData } from "@/constant";
 
 export const ContactSocials = () => {
   const socialLinks = [
-    {
-      Icon: FaGithub,
-      link: `https://github.com/${selfData.socials_username.github}`,
-      initial: -10,
-    },
-    {
-      Icon: FaLinkedinIn,
-      link: `https://www.linkedin.com/in/${selfData.socials_username.linkedin}`,
-      initial: 10,
-    },
-    {
-      Icon: PiTelegramLogo,
-      link: `https://t.me/${selfData.socials_username.telegram}`,
-      initial: -10,
-    },
-    {
-      Icon: FaTwitter,
-      link: `https://twitter.com/${selfData.socials_username.twitter}`,
-      initial: 10,
-    },
-    {
-      Icon: SiLeetcode,
-      link: `https://leetcode.com/${selfData.socials_username.leetcode}`,
-      initial: -10,
-    },
-  ];
+    selfData.socials_username.github
+      ? {
+          Icon: FaGithub,
+          link: `https://github.com/${selfData.socials_username.github}`,
+          initial: -10,
+        }
+      : null,
+    selfData.socials_username.linkedin
+      ? {
+          Icon: FaLinkedinIn,
+          link: `https://www.linkedin.com/in/${selfData.socials_username.linkedin}`,
+          initial: 10,
+        }
+      : null,
+    selfData.socials_username.telegram
+      ? {
+          Icon: PiTelegramLogo,
+          link: `https://t.me/${selfData.socials_username.telegram}`,
+          initial: -10,
+        }
+      : null,
+    selfData.socials_username.twitter
+      ? {
+          Icon: FaTwitter,
+          link: `https://twitter.com/${selfData.socials_username.twitter}`,
+          initial: 10,
+        }
+      : null,
+    selfData.socials_username.leetcode
+      ? {
+          Icon: SiLeetcode,
+          link: `https://leetcode.com/${selfData.socials_username.leetcode}`,
+          initial: -10,
+        }
+      : null,
+  ].filter(Boolean) as { Icon: IconType; link: string; initial: number }[];
 
   return (
     <ul className="flex mt-12 space-x-4">

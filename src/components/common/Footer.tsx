@@ -23,23 +23,31 @@ export const Footer = () => {
   const toggleHeart = () => setIsHeartFilled(!isHeartFilled);
 
   const socialLinks = [
-    {
-      icon: LuGithub,
-      href: `https://github.com/${selfData.socials_username.github}`,
-      label: "GitHub",
-    },
-    {
-      icon: LuLinkedin,
-      href: `https://linkedin.com/in/${selfData.socials_username.linkedin}`,
-      label: "LinkedIn",
-    },
-    {
-      icon: LuTwitter,
-      href: `https://twitter.com/${selfData.socials_username.twitter}`,
-      label: "Twitter",
-    },
-    { icon: LuMail, href: `mailto:${selfData.email}`, label: "Email" },
-  ];
+    selfData.socials_username.github
+      ? {
+          icon: LuGithub,
+          href: `https://github.com/${selfData.socials_username.github}`,
+          label: "GitHub",
+        }
+      : null,
+    selfData.socials_username.linkedin
+      ? {
+          icon: LuLinkedin,
+          href: `https://linkedin.com/in/${selfData.socials_username.linkedin}`,
+          label: "LinkedIn",
+        }
+      : null,
+    selfData.socials_username.twitter
+      ? {
+          icon: LuTwitter,
+          href: `https://twitter.com/${selfData.socials_username.twitter}`,
+          label: "Twitter",
+        }
+      : null,
+    selfData.email
+      ? { icon: LuMail, href: `mailto:${selfData.email}`, label: "Email" }
+      : null,
+  ].filter(Boolean) as { icon: typeof LuGithub; href: string; label: string }[];
 
   return (
     <footer className="relative bg-background/10 backdrop-blur-md border-t border-border/50 overflow-hidden">
@@ -94,9 +102,7 @@ export const Footer = () => {
             </motion.span>
             <h3
               className={`${quentine.className} text-2xl font-semibold text-primary`}
-            >
-              Aarab Nishchal
-            </h3>
+            >{selfData.name}</h3>
           </div>
 
           <div className="flex items-center space-x-3">
@@ -125,9 +131,7 @@ export const Footer = () => {
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-primary/80 hover:text-primary"
-            >
-              Aarab Nishchal
-            </button>
+            >{selfData.name}</button>
           </p>
           <span>Licensed under MIT</span>
         </div>

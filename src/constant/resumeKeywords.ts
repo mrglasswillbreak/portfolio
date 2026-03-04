@@ -1,8 +1,8 @@
 export const resumeKeywords = [
 
-  "Aarab Nishchal",
-  "Aarab Nishchal resume",
-  "Aarab Nishchal CV",
+  "mrglasswillbreak",
+  "mrglasswillbreak resume",
+  "mrglasswillbreak CV",
   "Software Developer",
   "Full Stack Developer",
   "Frontend Developer",
@@ -13,7 +13,7 @@ export const resumeKeywords = [
   "Entry Level Developer",
   "Computer Science Graduate",
   "B.Tech Computer Science",
-  "KIIT University",
+  "GitHub",
 
 
   "JavaScript",
@@ -255,8 +255,8 @@ export const resumeKeywords = [
   "AI Projects",
 
 
-  "Bhubaneswar",
-  "Odisha",
+  "Remote",
+  "Worldwide",
   "India",
   "Remote Work",
   "Hybrid Work",

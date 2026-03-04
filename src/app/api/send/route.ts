@@ -63,7 +63,7 @@ export async function POST(request: Request) {
   );
 
   const message = {
-    from: `"Aarab Nishchal - Contact Team" <${process.env.email_from}>`,
+    from: `"mrglasswillbreak - Contact Team" <${process.env.email_from}>`,
     to: `${senderName} <${senderEmail}>`,
     subject: "Your message has landed! 🚀 We'll get back to you shortly",
     html: htmlContent,
