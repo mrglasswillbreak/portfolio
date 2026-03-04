@@ -6,17 +6,15 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06b6d4?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vercel Analytics](https://img.shields.io/badge/Vercel_Analytics-enabled-black?logo=vercel)](https://vercel.com/analytics)
 
-A recruiter-friendly personal portfolio built with Next.js App Router, focused on polished UI, project storytelling, and clean contact pathways.
+A recruiter-focused portfolio built with Next.js App Router to showcase projects, engineering strengths, and a clear contact path.
 
-## Live Demo Links
-- **Portfolio source/demo entry:** https://github.com/mrglasswillbreak/AN
-- **GitHub profile (all featured projects):** https://github.com/mrglasswillbreak
-- **Resume route (local while developing):** http://localhost:3000/resume
+## Live Demo
+- https://mrglasswillbreak.vercel.app
 
 ## Screenshot Previews
 
-### Homepage Preview
-![Homepage preview](public/images/thumbnail.png)
+### Current Homepage Preview
+![Homepage preview](https://image.thum.io/get/width/1400/noanimate/https://mrglasswillbreak.vercel.app)
 
 ### About/Profile Visual
 ![About/profile preview](public/images/me.png)
@@ -31,25 +29,36 @@ A recruiter-friendly personal portfolio built with Next.js App Router, focused o
 ## Short Case-Study Snapshots
 
 ### 1) Personal Brand Landing Experience
-**Challenge:** Present technical depth and personality in a single scrollable narrative that still feels fast and modern.  
-**Approach:** Built modular sections (Hero, About, Skills, Experience, Projects, Contact) with animation-enhanced transitions and responsive composition.  
-**Outcome:** A cleaner first impression for recruiters with clear role targeting, stronger content hierarchy, and better storytelling flow.
+**Challenge:** Present technical depth and personality in one clean, fast-loading experience.  
+**Approach:** Built modular sections (Hero, About, Skills, Experience, Projects, Contact) with responsive layout and subtle motion.  
+**Outcome:** Recruiters get a stronger first impression with clearer narrative flow and easier profile scanning.
 
 ### 2) Recruiter Conversion Signals
-**Challenge:** Make it easier for hiring teams to quickly evaluate availability and fit.  
-**Approach:** Centralized profile data in constants and surfaced practical hiring details (location, availability, work model, response time) in the contact area.  
-**Outcome:** Faster recruiter triage and clearer communication expectations.
+**Challenge:** Reduce friction for hiring teams evaluating availability and fit.  
+**Approach:** Centralized profile content and surfaced practical hiring details in the contact section.  
+**Outcome:** Faster screening and clearer outreach expectations.
 
 ### 3) SEO & Discovery Foundation
-**Challenge:** Improve discoverability and social-sharing quality.  
-**Approach:** Added metadata, Open Graph/Twitter cards, robots/sitemap support, and structured-data helpers.  
-**Outcome:** Better indexing readiness and more professional social previews.
+**Challenge:** Improve discoverability and social preview quality.  
+**Approach:** Added robust metadata, Open Graph/Twitter support, robots/sitemap, and structured data helpers.  
+**Outcome:** Better indexing readiness and more professional share cards.
 
 ## Project Structure
-- `src/app` → routes, layouts, metadata, API handlers
-- `src/components` → reusable UI blocks and page sections
-- `src/constant` → profile, projects, experience, and skill data
-- `public/images` → static brand and preview assets
+```text
+.
+├── public/
+│   ├── docs/
+│   └── images/
+├── src/
+│   ├── app/           # routes, layouts, metadata, API handlers
+│   ├── components/    # UI primitives, cards, sections, templates
+│   ├── constant/      # profile, projects, skills, experience data
+│   ├── lib/           # utils, schema, helper functions
+│   └── assets/        # local SVG/assets used by components
+├── README.md
+├── package.json
+└── tailwind.config.js
+```
 
 ## Local Development
 ```bash
@@ -66,7 +75,6 @@ npm run start
 ```
 
 ## Customize Content
-Update these files to personalize the portfolio:
 - `src/constant/self.ts`
 - `src/constant/experience.ts`
 - `src/constant/projects.ts`
