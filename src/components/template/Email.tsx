@@ -69,7 +69,7 @@ export function EmailTemplate({
                 />
               </Column>
               <Column>
-                <Text style={brandText}>mrglasswillbreak</Text>
+                <Text style={brandText}>Muhammed Abdulhadi</Text>
               </Column>
             </Row>
           </Section>
@@ -121,11 +121,7 @@ export function EmailTemplate({
               </table>
             </Section>
 
-            <Text style={footerText}>
-              You&apos;re receiving this email because you contacted me via my
-              site. If that wasn&apos;t you... it might&apos;ve been your cat
-              again 🐾
-            </Text>
+            <Text style={signature}>— Muhammed Abdulhadi 👨🏽‍💻</Text>
           </Section>
         </Container>
       </Body>
@@ -133,87 +129,86 @@ export function EmailTemplate({
   );
 }
 
-const main: React.CSSProperties = {
-  background: "radial-gradient(125% 125% at 50% 10%, #000 40%, #6633ee 100%)",
-  padding: "40px 20px",
-  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-  color: "#ffffff",
-  lineHeight: "1.5",
+const main = {
+  backgroundColor: "#0f0f11",
+  margin: 0,
+  padding: "20px 0",
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
-const container: React.CSSProperties = {
-  backgroundColor: "transparent",
+const container = {
   maxWidth: "600px",
   margin: "0 auto",
+  backgroundColor: "#151518",
+  border: "1px solid #2c2c31",
+  borderRadius: "14px",
+  padding: "24px",
+  color: "#f4f4f5",
 };
 
-const header: React.CSSProperties = {
-  marginBottom: "30px",
-  alignItems: "center",
+const header = {
+  marginBottom: "20px",
 };
 
-const brandText: React.CSSProperties = {
-  fontSize: "20px",
-  fontWeight: "bold",
-  marginLeft: "10px",
-  marginTop: "5px",
+const brandText = {
+  fontSize: "17px",
+  fontWeight: "700",
+  color: "#ffffff",
+  margin: "0 0 0 8px",
 };
 
-const heading: React.CSSProperties = {
+const heading = {
   fontSize: "24px",
-  fontWeight: "bold",
-  marginBottom: "15px",
+  fontWeight: "700",
+  marginBottom: "14px",
+  color: "#ffffff",
 };
 
-const text: React.CSSProperties = {
-  fontSize: "16px",
-  marginBottom: "16px",
+const text = {
+  fontSize: "15px",
+  lineHeight: "1.7",
+  color: "#e4e4e7",
+  marginBottom: "12px",
 };
 
-const label: React.CSSProperties = {
-  fontSize: "16px",
-  fontWeight: "bold",
-  marginTop: "20px",
-};
-
-const codeBlock: React.CSSProperties = {
-  backgroundColor: "rgba(255,255,255,0.1)",
-  padding: "16px",
-  borderRadius: "8px",
-  fontFamily: "monospace",
+const label = {
   fontSize: "14px",
-  whiteSpace: "pre-wrap",
-  lineHeight: "1.4",
-  color: "#fff",
-  marginTop: "8px",
+  marginBottom: "8px",
+  color: "#d4d4d8",
 };
 
-const socialSection: React.CSSProperties = {
-  marginTop: "30px",
-  padding: "20px",
-  textAlign: "center",
-  width: "100%",
-};
-
-const socialTable: React.CSSProperties = {
-  margin: "0 auto",
-  borderSpacing: "12px",
-  borderCollapse: "separate",
-};
-
-const socialIconCol: React.CSSProperties = {
-  backgroundColor: "rgba(255,255,255,0.08)",
-  padding: "8px",
+const codeBlock = {
+  backgroundColor: "#1e1e22",
   borderRadius: "8px",
-  textAlign: "center",
+  padding: "12px",
+  fontSize: "13px",
+  color: "#f9fafb",
+  whiteSpace: "pre-wrap" as const,
+  wordBreak: "break-word" as const,
+  border: "1px solid #3f3f46",
 };
 
-const socialIcon: React.CSSProperties = {
-  borderRadius: "4px",
+const socialSection = {
+  marginTop: "18px",
+  marginBottom: "14px",
 };
 
-const footerText: React.CSSProperties = {
-  fontSize: "12px",
-  marginTop: "30px",
-  color: "#ccc",
+const socialTable = {
+  margin: "0 auto",
+};
+
+const socialIconCol = {
+  padding: "0 6px",
+};
+
+const socialIcon = {
+  borderRadius: "8px",
+  backgroundColor: "#27272a",
+  padding: "4px",
+};
+
+const signature = {
+  marginTop: "14px",
+  fontSize: "14px",
+  color: "#a1a1aa",
 };

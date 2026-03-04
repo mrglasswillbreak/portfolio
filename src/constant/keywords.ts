@@ -1,110 +1,40 @@
 const names = [
+  "Muhammed Abdulhadi",
+  "Muhammed Abdulhadi Portfolio",
   "mrglasswillbreak",
-  "mrglasswillbreak Portfolio",
-  "mrglasswillbreak",
-  "mrglasswillbreak GitHub",
-  "mrglasswillbreak Remote",
+  "Muhammed Abdulhadi GitHub",
 ];
 
 const roles = [
   "Software Engineer",
   "Full Stack Developer",
-  "Next.js Developer",
-  "Frontend Engineer",
+  "Frontend Developer",
   "Backend Developer",
-  "Generative AI Engineer",
-  "Technical Content Engineer",
-  "Problem Setter",
-  "Student Developer",
-  "Creative Developer",
-  "UI/UX Engineer"
+  "Open Source Contributor",
+  "Web Developer",
 ];
 
 const skills = [
-  // Web Frameworks & Libraries
-  "Next.js 15",
-  "React.js",
-  "React Server Components",
+  "Next.js",
+  "React",
   "TypeScript",
   "Tailwind CSS",
-  "Framer Motion",
   "Node.js",
-  "Express.js",
-  "Redux Toolkit",
-  "Zustand",
-
-  // Database & Backend
-  "PostgreSQL",
-  "Supabase",
-  "MongoDB",
-  "Prisma ORM",
-  "GraphQL",
-  "REST API",
-  "Serverless Functions",
-  "Edge Runtime",
-
-  // AI & Systems
-  "Machine Learning",
-  "LLM Integration",
-  "Ollama",
-  "RAG Pipelines",
-  "LangChain",
-  "Vector Databases",
-  "C++ Optimization",
-  "Python Automation",
-  "Docker",
-  "Kubernetes",
-  "CI/CD Pipelines",
-  "Git & GitHub"
-];
-
-const projects = [
-  "CppTestGenAI",
-  "Orphia Music Generator",
-  "Algo Visualizer Next.js",
-  "Bhagavad Gita API",
-  "Sorting Algorithm Visualizer",
-  "Portfolio Website Next.js",
-  "AI Powered Application"
-];
-
-const locations = [
-  "India",
-  "Delhi",
-  "NCR",
-  "Delhi NCR",
-  "Gurgaon",
-  "Remote",
-  "Worldwide",
-  "Bangalore",
-  "Remote",
-  "Worldwide"
+  "API Development",
+  "Git",
+  "GitHub",
 ];
 
 const longTail = [
-  "Hire Next.js Developer in India",
-  "Best Full Stack Developer Portfolio",
-  "React Developer for startup",
-  "Software Engineer Intern opportunities",
-  "Next.js 15 Portfolio Template",
-  "Generative AI Projects Showcase",
-  "Frontend Developer with AI skills",
-  "Freelance Web Developer India",
-  "Collaborate on Open Source",
-  "Technical Writer and Developer",
-  "Hackathon Winner Portfolio"
+  "Muhammed Abdulhadi GitHub projects",
+  "Full stack portfolio website",
+  "Next.js developer portfolio",
+  "Open source web projects",
 ];
 
 export const Keywords = [
   ...names,
   ...roles,
   ...skills,
-  ...projects,
-  ...locations,
   ...longTail,
-
-  ...roles.flatMap((role) => locations.map((loc) => `${role} in ${loc}`)),
-  ...skills.map((skill) => `${skill} Developer`),
-  ...skills.map((skill) => `${skill} Expert`),
-  ...skills.map((skill) => `Hire ${skill} Developer`),
 ];

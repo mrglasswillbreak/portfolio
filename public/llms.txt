@@ -1,23 +1,24 @@
-# mrglasswillbreak - Student Developer Portfolio
+# Muhammed Abdulhadi - Portfolio
 
 ## About
-mrglasswillbreak is a Student Developer and Creative Coder based in GitHub. He specializes in Full-Stack Web Development, primarily using the React and Next.js ecosystem.
+Muhammed Abdulhadi is a software developer focused on building clean, practical web products and sharing open-source work on GitHub.
 
-## Skills
-- **Languages**: JavaScript, TypeScript, Python, Java, C/C++, SQL
-- **Frameworks**: Next.js, React, Express.js, Tailwind CSS
-- **Tools**: Git, GitHub, Vercel, Firebase, MongoDB
+## Core Stack
+- JavaScript / TypeScript
+- React / Next.js
+- Tailwind CSS
+- Node.js
 
 ## Projects
-- **Portfolio**: This website, showcasing his work and skills.
-- **Various Open Source Experiments**: Available on GitHub.
+- Portfolio and product-focused web applications
+- AI-assisted and developer-tooling experiments
+- Open-source repositories on GitHub
 
 ## Contact
-- **Email**: 
-- **GitHub**: https://github.com/mrglasswillbreak
-- **LinkedIn**: 
-- **Twitter**: 
+- GitHub: https://github.com/mrglasswillbreak
+- LinkedIn: https://www.linkedin.com/in/muhammed-abdulhadi-7b9ba2278
+- X: https://x.com/mrglaswontbreak
 
-## Content Structure
-- `/`: Main landing page with Hero, About, Skills, Experience, Projects, and Contact sections.
-- `/resume`: Direct link to view/download resume.
+## Site Structure
+- `/`: Main portfolio landing page
+- `/resume`: Resume viewer and download section

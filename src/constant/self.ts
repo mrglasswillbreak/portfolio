@@ -1,8 +1,8 @@
 export const selfData = {
-  name: "mrglasswillbreak",
-  first_name: "mrglasswillbreak",
-  last_name: "",
-  jobTitle: "GitHub Developer",
+  name: "Muhammed Abdulhadi",
+  first_name: "Muhammed",
+  last_name: "Abdulhadi",
+  jobTitle: "Software Developer",
   workFor: "Independent",
   current_location: {
     city: "",
@@ -16,17 +16,17 @@ export const selfData = {
   },
   email: "mrglasswillbreak@users.noreply.github.com",
   roles: [
+    "Full-Stack Developer",
     "Open Source Contributor",
-    "Builder",
+    "Web Application Builder",
     "Problem Solver",
-    "Developer",
   ],
-  desc: "I build and share projects on GitHub.",
-  bio: "I’m mrglasswillbreak, and this portfolio highlights my GitHub profile, projects, and work.",
+  desc: "I build and ship modern web applications.",
+  bio: "I’m Muhammed Abdulhadi, a software developer focused on building reliable, user-centered web products and sharing my work on GitHub.",
   about: [
-    "Hi, I’m mrglasswillbreak. This site is now configured to reflect my GitHub presence and portfolio.",
-    "I enjoy building practical projects, sharing code, and continuously learning through open source.",
-    "You can explore my work and activity directly on GitHub.",
+    "I’m Muhammed Abdulhadi, a developer who enjoys turning ideas into polished, practical products.",
+    "My work focuses on full-stack web development, with attention to clean architecture, performance, and maintainability.",
+    "I actively share projects and experiments on GitHub and keep improving through hands-on building.",
   ],
 
   socials_username: {
@@ -34,9 +34,9 @@ export const selfData = {
     github: "mrglasswillbreak",
     instagram: "",
     leetcode: "",
-    linkedin: "",
+    linkedin: "muhammed-abdulhadi-7b9ba2278",
     snapchat: "",
     telegram: "",
-    twitter: "",
+    twitter: "mrglaswontbreak",
   },
 };

@@ -15,17 +15,17 @@ import {
 } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  applicationName: "mrglasswillbreak",
-  title: "mrglasswillbreak | Full Stack Developer & AI Engineer",
+  applicationName: "Muhammed Abdulhadi",
+  title: "Muhammed Abdulhadi | Full Stack Developer & AI Engineer",
   description:
-    "mrglasswillbreak is a GitHub profile for mrglasswillbreak, featuring projects, experiments, and developer work.",
+    "Muhammed Abdulhadi is a GitHub profile for Muhammed Abdulhadi, featuring projects, experiments, and developer work.",
   authors: [
     {
-      name: "mrglasswillbreak",
+      name: "Muhammed Abdulhadi",
       url: "https://github.com/mrglasswillbreak",
     },
   ],
-  creator: "mrglasswillbreak",
+  creator: "Muhammed Abdulhadi",
   referrer: "origin-when-cross-origin",
   category: "Portfolio",
   classification: "Software Development",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "mrglasswillbreak",
+    title: "Muhammed Abdulhadi",
     statusBarStyle: "black-translucent",
   },
   formatDetection: {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/logo.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
     ],
@@ -92,17 +92,17 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 
   openGraph: {
-    title: "mrglasswillbreak",
+    title: "Muhammed Abdulhadi",
     description:
-      "Explore mrglasswillbreak’s portfolio featuring projects in React, Next.js, AI, and developer tools. Discover a world of creative web applications and open-source experiments.",
+      "Explore Muhammed Abdulhadi’s portfolio featuring projects in React, Next.js, AI, and developer tools. Discover a world of creative web applications and open-source experiments.",
     url: "https://github.com/mrglasswillbreak",
-    siteName: "mrglasswillbreak",
+    siteName: "Muhammed Abdulhadi",
     images: [
       {
         url: "/images/thumbnail.png",
         width: 1200,
         height: 630,
-        alt: "mrglasswillbreak Portfolio Thumbnail",
+        alt: "Muhammed Abdulhadi Portfolio Thumbnail",
       },
     ],
     locale: "en_US",
@@ -112,12 +112,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "mrglasswillbreak",
+    title: "Muhammed Abdulhadi",
     description:
-      "Check out mrglasswillbreak’s personal portfolio and dev projects using Next.js, React, Tailwind, and modern web tech.",
+      "Check out Muhammed Abdulhadi’s personal portfolio and dev projects using Next.js, React, Tailwind, and modern web tech.",
     images: ["/images/thumbnail.png"],
-    creator: "@mrglasswillbreak",
-    site: "@mrglasswillbreak",
+    creator: "@mrglaswontbreak",
+    site: "@mrglaswontbreak",
   },
 };
 

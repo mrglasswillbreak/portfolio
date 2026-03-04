@@ -40,7 +40,7 @@ export const Footer = () => {
     selfData.socials_username.twitter
       ? {
           icon: LuTwitter,
-          href: `https://twitter.com/${selfData.socials_username.twitter}`,
+          href: `https://x.com/${selfData.socials_username.twitter}`,
           label: "Twitter",
         }
       : null,

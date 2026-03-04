@@ -8,7 +8,7 @@ const sameAsLinks = [
     ? `https://linkedin.com/in/${selfData.socials_username.linkedin}`
     : null,
   selfData.socials_username.twitter
-    ? `https://twitter.com/${selfData.socials_username.twitter}`
+    ? `https://x.com/${selfData.socials_username.twitter}`
     : null,
   selfData.socials_username.instagram
     ? `https://instagram.com/${selfData.socials_username.instagram}`
@@ -49,10 +49,10 @@ export function generateWebsiteStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "mrglasswillbreak - Portfolio",
+    name: "Muhammed Abdulhadi - Portfolio",
     url: "https://github.com/mrglasswillbreak",
     description:
-      "mrglasswillbreak's portfolio featuring GitHub projects and modern web development",
+      "Muhammed Abdulhadi's portfolio featuring GitHub projects and modern web development",
     author: {
       "@type": "Person",
       name: selfData.name,
@@ -80,8 +80,8 @@ export function generateResumeStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "DigitalDocument",
-    name: "mrglasswillbreak Resume",
-    description: "Professional resume and profile information for mrglasswillbreak",
+    name: "Muhammed Abdulhadi Resume",
+    description: "Professional resume and profile information for Muhammed Abdulhadi",
     url: "https://github.com/mrglasswillbreak",
     author: {
       "@type": "Person",

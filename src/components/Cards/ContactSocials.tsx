@@ -34,7 +34,7 @@ export const ContactSocials = () => {
     selfData.socials_username.twitter
       ? {
           Icon: FaTwitter,
-          link: `https://twitter.com/${selfData.socials_username.twitter}`,
+          link: `https://x.com/${selfData.socials_username.twitter}`,
           initial: 10,
         }
       : null,
