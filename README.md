@@ -62,25 +62,25 @@ A modern, recruiter-focused developer portfolio built with **Next.js App Router*
 ## Case-Study Style Highlights
 
 ### 1) Personal Brand Landing Experience
-**Challenge:** Present technical depth and personality in one cohesive, high-quality browsing flow.
+- **Challenge:** Present technical depth and personality in one cohesive, high-quality browsing flow.
 
-**Approach:** Structured the portfolio into modular sections (Hero, About, Skills, Experience, Projects, Contact) with responsive composition and subtle animations.
+- **Approach:** Structured the portfolio into modular sections (Hero, About, Skills, Experience, Projects, Contact) with responsive composition and subtle animations.
 
-**Outcome:** Improved first impression quality and faster recruiter scan-ability.
+- **Outcome:** Improved first impression quality and faster recruiter scan-ability.
 
 ### 2) Recruiter Conversion Signals
-**Challenge:** Reduce friction for hiring teams evaluating fit and availability.
+- **Challenge:** Reduce friction for hiring teams evaluating fit and availability.
   
-**Approach:** Centralized profile content and surfaced practical hiring details directly in the contact experience.
+- **Approach:** Centralized profile content and surfaced practical hiring details directly in the contact experience.
 
-**Outcome:** Cleaner handoff from “portfolio viewer” to “outreach-ready candidate.”
+- **Outcome:** Cleaner handoff from “portfolio viewer” to “outreach-ready candidate.”
 
 ### 3) SEO & Discovery Foundation
-**Challenge:** Ensure the site is discoverable and looks professional when shared.  
+- **Challenge:** Ensure the site is discoverable and looks professional when shared.  
 
-**Approach:** Implemented metadata, Open Graph + Twitter cards, robots/sitemap routes, and structured data helpers.  
+- **Approach:** Implemented metadata, Open Graph + Twitter cards, robots/sitemap routes, and structured data helpers.  
 
-**Outcome:** Better indexing readiness and stronger link-sharing previews.
+- **Outcome:** Better indexing readiness and stronger link-sharing previews.
 
 ---
 
