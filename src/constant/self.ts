@@ -2,11 +2,11 @@ export const selfData = {
   name: "Muhammed Abdulhadi",
   first_name: "Muhammed",
   last_name: "Abdulhadi",
-  jobTitle: "Software Developer",
+  jobTitle: "Junior Full-Stack JavaScript Developer",
   workFor: "Independent",
   current_location: {
-    city: "",
-    state: "",
+    city: "Lagos",
+    state: "Lagos State",
     country: "Nigeria",
   },
   DOB: {
@@ -16,18 +16,23 @@ export const selfData = {
   },
   email: "mrglasswillbreak@gmail.com",
   roles: [
-    "Full-Stack Developer",
+    "Junior Full-Stack JavaScript Developer",
     "Open Source Contributor",
     "Web Application Builder",
     "Problem Solver",
   ],
   desc: "I build and ship modern web applications.",
-  bio: "I’m Muhammed Abdulhadi, a software developer focused on building reliable, user-centered web products and sharing my work on GitHub.",
+  bio: "I build production-ready Next.js applications with responsive UI, solid SEO fundamentals, and maintainable architecture.",
   about: [
     "I’m Muhammed Abdulhadi, a developer who enjoys iterating, and turning ideas into polished, practical products.",
     "My work focuses on front-end and full-stack web development, with attention to clean architecture, captivating visuals, performance, and maintainability.",
     "I actively share projects and experiments on GitHub and keep improving through hands-on building.",
   ],
+  availability: {
+    status: "Open to junior full-stack roles",
+    work_model: "Remote / Hybrid",
+    response_time: "Typically replies within 24 hours",
+  },
 
   socials_username: {
     facebook: "",

@@ -146,6 +146,12 @@ const ContactList = () => {
         label="Location"
         value={`${selfData.current_location.city}, ${selfData.current_location.state}, ${selfData.current_location.country}`}
       />
+      <div className="rounded-xl border border-primary/20 bg-white/5 p-4 space-y-2">
+        <p className="text-sm font-semibold text-primary">Availability</p>
+        <p className="text-sm text-muted-foreground">{selfData.availability.status}</p>
+        <p className="text-sm text-muted-foreground">{selfData.availability.work_model}</p>
+        <p className="text-sm text-muted-foreground">{selfData.availability.response_time}</p>
+      </div>
     </div>
   );
 };

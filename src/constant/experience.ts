@@ -1,11 +1,11 @@
 export const experienceData = [
   {
-    role: "Full Stack JavaScript course enrollment",
+    role: "Full-Stack JavaScript Trainee",
     year: "Sep'25 - Present",
     description: [
-      "Developed various interactive and responsive web projects and applications, including this portfolio, a multi-platform drawing and sketching app, and a fully featured rock paper scissors app.",
-      "Learnt and developed a deep engineering mindset and problem-solving skills, carefully breaking down complex tasks and projects into smaller bite-sized ones before implementation.",
-      "Developed a full professional level understanding of Git workflows  and GitHub for code version control and collaboration, working on open source projects and building real-world experience."
+      "Built interactive web applications as part of structured full-stack training, including this portfolio, a multi-platform sketching app, and a complete rock-paper-scissors game.",
+      "Applied an engineering-first approach by breaking complex features into scoped tasks, then implementing and testing incrementally.",
+      "Strengthened Git and GitHub collaboration practices through frequent commits, branching workflows, and open-source contribution exercises."
     ],
 
     company: "The Odin Project",
@@ -20,11 +20,11 @@ export const experienceData = [
     role: "Graphic Designer",
     year: "Nov'18 - Dec'20",
     description: [
-      "Designed complex layered vector graphics and images for events and social media, making sure even the algorithm couldn’t ignore our team’s drip.",
-      "Turned vague design briefs into crisp creative assets—because 'make it pop' is not a real instruction but I delivered anyway.",
-      "Blended creativity with speed using Illustrator, Canva, and Figma to bring aesthetic harmony across posters, reels, banners and everything in between—basically the design department’s Jack of all Trades.",
+      "Designed layered vector graphics and campaign visuals for events and social media channels.",
+      "Translated broad design briefs into polished assets for posters, reels, and promotional banners.",
+      "Delivered consistent visual output under tight timelines using Illustrator, Canva, Figma, and CorelDRAW.",
     ],
     company: "Adebayo Tech Cafe",
-    technologies: ["Adobe Illustrator", "Canva", "Figma", "Corel Drawl"],
+    technologies: ["Adobe Illustrator", "Canva", "Figma", "CorelDRAW"],
   },
 ];
