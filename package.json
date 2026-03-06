@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/cutive-mono": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
     "@paper-design/shaders-react": "^0.0.46",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-email/components": "^0.3.2",

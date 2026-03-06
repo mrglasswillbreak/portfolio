@@ -18,6 +18,8 @@ export default function NotFound() {
   return (
     <div className="min-h-screen relative flex flex-col">
 
+        <Background />
+
         <Navbar />
 
 

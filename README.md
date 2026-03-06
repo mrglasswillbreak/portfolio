@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06b6d4?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vercel Analytics](https://img.shields.io/badge/Vercel_Analytics-enabled-black?logo=vercel)](https://vercel.com/analytics)
 
-A modern, recruiter-focused developer portfolio built with **Next.js App Router**, designed to highlight project quality, technical depth, and hiring-ready contact signals.
+A modern, recruiter-focused developer portfolio built with **Next.js App Router**, featuring interactive navigation, responsive project browsing, and locally hosted fonts to keep builds reliable and professional.
 
 ---
 
@@ -15,6 +15,14 @@ A modern, recruiter-focused developer portfolio built with **Next.js App Router*
 
 **Production deployment:**
 - https://mrglasswillbreak.vercel.app
+
+---
+
+## What's New
+
+- Section-aware navigation with a scroll progress indicator for faster exploration
+- Responsive project filter that toggles between curated highlights and live GitHub data
+- Locally hosted Inter and Cutive Mono fonts so builds succeed even without external font CDNs
 
 ---
 
@@ -35,7 +43,7 @@ A modern, recruiter-focused developer portfolio built with **Next.js App Router*
 - Outcome-driven project summaries
 - Recruiter conversion details (availability, response expectations)
 - Strong metadata and SEO/social preview foundation
-- Smooth, modern UI with responsive sections
+- Smooth, modern UI with responsive sections and interactive navigation
 
 ---
 
@@ -133,6 +141,8 @@ npm run build
 npm run start
 ```
 
+> Fonts are self-hosted via `@fontsource`, so builds no longer depend on reaching Google Fonts.
+
 ---
 
 ## ⚙️ Environment Variables
@@ -163,4 +173,3 @@ Update these files to adapt the portfolio to your own profile:
 - GitHub: https://github.com/mrglasswillbreak
 - LinkedIn: https://www.linkedin.com/in/muhammed-abdulhadi-7b9ba2278
 - X: https://x.com/mrglaswontbreak
-
