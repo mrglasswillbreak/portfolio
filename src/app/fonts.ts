@@ -1,20 +1,52 @@
-import { Inter, Cutive_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
-// Inter for all paragraph text and body content
-export const inter = Inter({
+// Inter for all paragraph text and body content (locally hosted for offline builds)
+export const inter = localFont({
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  fallback: ["Inter", "system-ui", "sans-serif"],
+  src: [
+    {
+      path: "../../node_modules/@fontsource/inter/files/inter-latin-300-normal.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 // Mono for subheadings and smaller descriptive text
-export const mono = Cutive_Mono({
-  weight: "400",
+export const mono = localFont({
   variable: "--font-mono",
-  subsets: ["latin"],
   display: "swap",
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+  src: [
+    {
+      path: "../../node_modules/@fontsource/cutive-mono/files/cutive-mono-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
 });
 
 // Nasalization for all main headings
