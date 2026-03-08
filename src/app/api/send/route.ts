@@ -63,9 +63,10 @@ export async function POST(request: Request) {
   );
 
   const message = {
-    from: `"Muhammed Abdulhadi - Contact Team" <${process.env.email_from}>`,
-    to: `${senderName} <${senderEmail}>`,
-    subject: "Your message has landed! 🚀 We'll get back to you shortly",
+    from: `"${senderName}" <${process.env.email_from}>`,
+    to: "moetheman111@gmail.com",
+    replyTo: `${senderName} <${senderEmail}>`,
+    subject: `New contact form message from ${senderName}: ${reasonToContact}`,
     html: htmlContent,
     headers: {
       "X-Entity-Ref-ID": "newmail",
