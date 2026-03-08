@@ -22,7 +22,7 @@ export const Hero = () => {
     <section
       id="hero"
       ref={ref}
-      className="min-h-screen flex items-center justify-start px-6 relative"
+      className="min-h-screen flex items-center justify-start px-6 relative pt-28 sm:pt-32"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
 
