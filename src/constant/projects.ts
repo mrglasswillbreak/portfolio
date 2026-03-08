@@ -31,4 +31,12 @@ export const projectsData = [
     demo: "https://mrglasswillbreak.github.io/etch-a-sketch/",
     tech: ["HTML", "CSS", "JavaScript"],
   },
+  {
+    title: "Landing Page",
+    description:
+      "Responsive landing page built with HTML and CSS as part of The Odin Project. Focused on layout composition, Flexbox usage, and responsive design principles.",
+    github: "https://github.com/mrglasswillbreak/TOPLandingPage",
+    live: "https://mrglasswillbreak.github.io/TOPLandingPage/",
+    tech: ["HTML", "CSS", "Responsive Design"]
+  },
 ];
