@@ -1,32 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { MeshGradient } from "@paper-design/shaders-react";
 
 export const Background = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseEnter = () => {
-      // Future: Add mouse interaction animations
-    };
-    const handleMouseLeave = () => {
-      // Future: Add mouse interaction animations
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("mouseenter", handleMouseEnter);
-      container.addEventListener("mouseleave", handleMouseLeave);
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("mouseenter", handleMouseEnter);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
-  }, []);
 
   return (
     <div
