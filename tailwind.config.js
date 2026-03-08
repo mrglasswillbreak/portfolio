@@ -18,6 +18,10 @@ module.exports = {
         quentine: ['var(--font-quentine)', 'serif'],
         sans: ['var(--font-inter)', 'sans-serif'],
       },
+      spacing: {
+        35: "8.75rem",
+        39: "9.75rem",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

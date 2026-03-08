@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Navbar, Footer, Background } from "@/components/common";
 import { nasalization } from "@/app/fonts";
@@ -26,6 +26,7 @@ interface DocumentWithFullscreen extends Document {
 export default function Resume() {
 
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElementWithFullscreen>(null);
 
   const PDF_URL = "/docs/Aarab_Nishchal_Resume.pdf";
 
@@ -62,9 +63,7 @@ export default function Resume() {
 
   const toggleFullscreen = () => {
     if (!isFullscreen) {
-      const iframe = document.querySelector(
-        "iframe"
-      ) as HTMLIFrameElementWithFullscreen;
+      const iframe = iframeRef.current;
       if (iframe?.requestFullscreen) {
         iframe.requestFullscreen();
         setIsFullscreen(true);
@@ -201,6 +200,7 @@ export default function Resume() {
                     className="flex justify-center items-start min-h-full p-4"
                   >
                     <iframe
+                      ref={iframeRef}
                       src={`${PDF_URL}#view=FitH&toolbar=0&navpanes=0&scrollbar=1`}
                       width="100%"
                       height="780px"
@@ -211,7 +211,7 @@ export default function Resume() {
                         minHeight: "600px",
                         background: "#ffffff",
                       }}
-                      allow="fullscreen"
+                      allowFullScreen
                     />
                   </div>
                   </div>

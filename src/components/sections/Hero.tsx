@@ -12,11 +12,17 @@ import { quentine, mono } from "@/app/fonts";
 export const Hero = () => {
   const ref = useRef(null);
 
+  const handleContactScroll = () => {
+    if (typeof window === "undefined") return;
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
+      id="hero"
       ref={ref}
-      className="min-h-screen flex items-center justify-start px-6 relative"
+      className="min-h-screen flex items-center justify-start px-6 relative pt-35 sm:pt-39"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
 
@@ -29,7 +35,7 @@ export const Hero = () => {
         >
           <div className="space-y-6">
             <motion.h1
-              className={`${quentine.className} text-4xl md:text-6xl lg:text-7xl font-bold leading-tight break-words max-w-[14ch]`}
+              className={`${quentine.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight`}
               style={{ color: "hsl(var(--primary))" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,6 +103,46 @@ export const Hero = () => {
                 </Link>
               </Button>
             </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="relative group overflow-hidden border-primary/40 hover:border-primary/70 hover:bg-primary/5 shadow-lg transition-all duration-300"
+                onClick={handleContactScroll}
+              >
+                <span className="relative z-10 font-medium">Let&apos;s Talk</span>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            <div className="rounded-xl border border-primary/20 bg-white/5 p-4 shadow-sm">
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                Availability
+              </p>
+              <p className="font-semibold text-primary">
+                {selfData.availability.status}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {selfData.availability.work_model}
+              </p>
+            </div>
+            <div className="rounded-xl border border-primary/20 bg-white/5 p-4 shadow-sm">
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                Based in
+              </p>
+              <p className="font-semibold text-primary">
+                {selfData.current_location.city}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {selfData.current_location.country}
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

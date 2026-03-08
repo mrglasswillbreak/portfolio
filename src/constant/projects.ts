@@ -1,42 +1,34 @@
 export const projectsData = [
   {
-    name: "AN",
+    name: "Portfolio",
     description:
-      "A performance-focused personal portfolio with polished UI interactions, SEO metadata, and analytics-oriented structure for production deployment.",
-    github_link: "https://github.com/mrglasswillbreak/AN",
-    demo: "https://github.com/mrglasswillbreak/AN",
-    tech: ["Next.js", "Framer Motion", "Vercel Analytics"],
+      "A polished personal portfolio showcasing my work, built with modern UI motion, SEO metadata, and production-ready deployment.",
+    github_link: "https://github.com/mrglasswillbreak/portfolio",
+    demo: "https://mrglasswillbreak.vercel.app",
+    tech: ["Next.js", "TypeScript", "Framer Motion"],
   },
   {
-    name: "Orphia",
+    name: "Calculator",
     description:
-      "An AI-assisted music generation experience that transforms prompts into track ideas with a modern, user-friendly workflow.",
-    github_link: "https://github.com/mrglasswillbreak/Orphia-AI-Music-Generator",
-    demo: "https://github.com/mrglasswillbreak/Orphia-AI-Music-Generator",
-    tech: ["AI Integration", "Next.js", "API Workflows"],
+      "Mobile and desktop friendly calculator with keyboard support, built with vanilla HTML, CSS, and JavaScript.",
+    github_link: "https://github.com/mrglasswillbreak/calculator",
+    demo: "https://mrglasswillbreak.github.io/calculator/",
+    tech: ["JavaScript", "HTML", "CSS"],
   },
   {
-    name: "Ideascribe",
+    name: "RockPaperScissors",
     description:
-      "A collaborative productivity workspace with editing, autosave, and real-time workflow concepts for teams.",
-    github_link: "https://github.com/mrglasswillbreak/ideascribe",
-    demo: "https://github.com/mrglasswillbreak/ideascribe",
-    tech: ["Realtime Collaboration", "Auth", "Cloud Storage"],
+      "A responsive rock paper scissors game featuring modular JavaScript logic, validation, and a clean UI.",
+    github_link: "https://github.com/mrglasswillbreak/RockPaperScissors",
+    demo: "https://mrglasswillbreak.github.io/RockPaperScissors/",
+    tech: ["JavaScript", "HTML", "CSS"],
   },
   {
-    name: "CppTestGenAI",
+    name: "Etch-A-Sketch",
     description:
-      "An AI-assisted test generation tool for C++ codebases that improves coverage and reduces repetitive manual test authoring.",
-    github_link: "https://github.com/mrglasswillbreak/CppTestGenAI",
-    demo: "https://github.com/mrglasswillbreak/CppTestGenAI",
-    tech: ["C++", "LLM", "Automation"],
-  },
-  {
-    name: "CraftoGram",
-    description:
-      "A content ideation and bio generation utility designed to help creators draft social-ready profile and caption content quickly.",
-    github_link: "https://github.com/mrglasswillbreak/crafto",
-    demo: "https://github.com/mrglasswillbreak/crafto",
-    tech: ["AI", "Prompt Engineering", "TypeScript"],
+      "Advanced, responsive Etch A Sketch web app with fluid drawing interactions across phones, tablets, and desktops.",
+    github_link: "https://github.com/mrglasswillbreak/etch-a-sketch",
+    demo: "https://mrglasswillbreak.github.io/etch-a-sketch/",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
 ];

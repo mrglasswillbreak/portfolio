@@ -99,8 +99,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
           </motion.h3>
 
           <motion.p
-            className="text-sm mb-6 flex-grow font-inter leading-relaxed"
-            style={{ color: "hsl(var(--foreground) / 0.8)" }}
+            className="text-sm mb-6 flex-grow font-inter leading-relaxed text-foreground/80 transition-colors duration-200 group-hover:text-primary-foreground group-active:text-primary-foreground"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
