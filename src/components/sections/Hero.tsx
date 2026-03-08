@@ -35,7 +35,7 @@ export const Hero = () => {
         >
           <div className="space-y-6">
             <motion.h1
-              className={`${quentine.className} text-4xl md:text-6xl lg:text-7xl font-bold leading-tight break-words max-w-[14ch]`}
+              className={`${quentine.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] sm:leading-tight break-words max-w-[16ch] sm:max-w-[14ch]`}
               style={{ color: "hsl(var(--primary))" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

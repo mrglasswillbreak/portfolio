@@ -123,7 +123,7 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
               {description.map((point, pointIndex) => (
                 <motion.li
                   key={pointIndex}
-                  className="text-xs font-inter flex items-start"
+                  className="text-xs font-inter flex items-start transition-colors duration-200 group-hover:text-primary-foreground group-active:text-primary-foreground"
                   style={{ color: "hsl(var(--foreground) / 0.8)" }}
                   initial={{ opacity: 0, x: -10 }}
                   animate={
