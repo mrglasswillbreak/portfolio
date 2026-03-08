@@ -4,6 +4,7 @@ import { render, pretty } from "@react-email/render";
 import validator from "validator";
 
 import { EmailTemplate } from "@/components/template/Email";
+import { OwnerEmailTemplate } from "@/components/template/OwnerEmail";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -52,26 +53,27 @@ export async function POST(request: Request) {
     );
   }
 
-  const htmlContent = await pretty(
-    await render(
-      EmailTemplate({
-        userName: senderName,
-        contactReason: reasonToContact,
-        userMessage: senderMsg,
-      })
-    )
-  );
-
-  const message = {
-    from: `"${senderName}" <${process.env.email_from}>`,
-    to: "moetheman111@gmail.com",
-    replyTo: `${senderName} <${senderEmail}>`,
-    subject: `New contact form message from ${senderName}: ${reasonToContact}`,
-    html: htmlContent,
-    headers: {
-      "X-Entity-Ref-ID": "newmail",
-    },
-  };
+  const [userHtml, ownerHtml] = await Promise.all([
+    pretty(
+      await render(
+        EmailTemplate({
+          userName: senderName,
+          contactReason: reasonToContact,
+          userMessage: senderMsg,
+        })
+      )
+    ),
+    pretty(
+      await render(
+        OwnerEmailTemplate({
+          senderName,
+          senderEmail,
+          contactReason: reasonToContact,
+          userMessage: senderMsg,
+        })
+      )
+    ),
+  ]);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -81,16 +83,36 @@ export async function POST(request: Request) {
     },
   });
 
+  // Notification email to owner
+  const ownerMessage = {
+    from: `"${senderName}" <${process.env.email_from}>`,
+    to: "moetheman111@gmail.com",
+    replyTo: `${senderName} <${senderEmail}>`,
+    subject: `New contact form message from ${senderName}: ${reasonToContact}`,
+    html: ownerHtml,
+    headers: { "X-Entity-Ref-ID": "newmail" },
+  };
+
+  // Auto-reply confirmation to the sender
+  const userMessage = {
+    from: `"Muhammed Abdulhadi" <${process.env.email_from}>`,
+    to: senderEmail,
+    subject: `Got your message, ${senderName}! 👋`,
+    html: userHtml,
+    headers: { "X-Entity-Ref-ID": "autoreply" },
+  };
+
   try {
-    await transporter.sendMail(message);
+    await Promise.all([
+      transporter.sendMail(ownerMessage),
+      transporter.sendMail(userMessage),
+    ]);
     return NextResponse.json(
-      {
-        message: `Email has been sent to ${senderEmail} successfully`,
-      },
+      { message: `Email has been sent to ${senderEmail} successfully` },
       { status: 200 }
     );
   } catch (err) {
-    console.error(`Error sending email to ${senderEmail}:`, err);
+    console.error(`Error sending email:`, err);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
