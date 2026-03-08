@@ -31,7 +31,7 @@ export const PreLoader = () => {
     // Hide preloader after animation completes
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 3500); // Adjust timing as needed
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);

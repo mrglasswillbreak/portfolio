@@ -57,7 +57,7 @@ export default function NotFound() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <p className="text-xs md:text-xl text-primary-foreground/80 leading-relaxed">
+                <p className="text-sm md:text-xl text-primary-foreground/80 leading-relaxed">
                   Oops! The page you&apos;re looking for seems to have wandered
                   off into the digital void.
                 </p>
