@@ -1,118 +1,48 @@
-import { selfData, skillsData } from "@/constant";
-
-const sameAsLinks = [
-  selfData.socials_username.github
-    ? `https://github.com/${selfData.socials_username.github}`
-    : null,
-  selfData.socials_username.linkedin
-    ? `https://linkedin.com/in/${selfData.socials_username.linkedin}`
-    : null,
-  selfData.socials_username.twitter
-    ? `https://x.com/${selfData.socials_username.twitter}`
-    : null,
-  selfData.socials_username.instagram
-    ? `https://instagram.com/${selfData.socials_username.instagram}`
-    : null,
-].filter(Boolean);
-
+import { site } from "./site";
 export function generatePersonStructuredData() {
-  const skills = skillsData.flatMap((category) =>
-    category.data.map((skill) => skill.title)
-  );
-
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: selfData.name,
-    givenName: selfData.first_name,
-    familyName: selfData.last_name,
-    jobTitle: selfData.jobTitle,
-    worksFor: {
-      "@type": "Organization",
-      name: selfData.workFor,
-    },
-    email: selfData.email,
+    name: site.name,
+    url: site.url,
+    jobTitle: "Full-stack Developer",
+    description: site.description,
+    email: site.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: selfData.current_location.city,
-      addressRegion: selfData.current_location.state,
-      addressCountry: selfData.current_location.country,
+      addressLocality: "Lagos",
+      addressCountry: "NG",
     },
-    sameAs: sameAsLinks,
-    url: "https://github.com/mrglasswillbreak",
-    description: selfData.bio,
-    knowsAbout: skills,
+    sameAs: [site.github, site.linkedin],
+    knowsAbout: [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Web Development",
+    ],
   };
 }
-
 export function generateWebsiteStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Muhammed Abdulhadi - Portfolio",
-    url: "https://github.com/mrglasswillbreak",
-    description:
-      "Muhammed Abdulhadi's portfolio featuring GitHub projects and modern web development",
-    author: {
-      "@type": "Person",
-      name: selfData.name,
-    },
+    name: site.name + " — Portfolio",
+    url: site.url,
+    description: site.description,
+    author: { "@type": "Person", name: site.name, url: site.url },
   };
 }
-
-export function generateOrganizationStructuredData() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: selfData.name,
-    url: "https://github.com/mrglasswillbreak",
-    logo: "https://github.com/mrglasswillbreak.png",
-    description: selfData.bio,
-    founder: {
-      "@type": "Person",
-      name: selfData.name,
-    },
-    sameAs: sameAsLinks,
-  };
-}
-
 export function generateResumeStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "DigitalDocument",
-    name: "Muhammed Abdulhadi Resume",
-    description: "Professional resume and profile information for Muhammed Abdulhadi",
-    url: "https://github.com/mrglasswillbreak",
-    author: {
-      "@type": "Person",
-      name: selfData.name,
-      email: selfData.email,
-      jobTitle: selfData.jobTitle,
-      worksFor: {
-        "@type": "Organization",
-        name: selfData.workFor,
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: selfData.current_location.city,
-        addressRegion: selfData.current_location.state,
-        addressCountry: selfData.current_location.country,
-      },
-      sameAs: sameAsLinks,
-    },
-    dateModified: new Date().toISOString(),
-    fileFormat: "application/pdf",
-    contentUrl: "https://github.com/mrglasswillbreak",
-    downloadUrl: "https://github.com/mrglasswillbreak",
-    keywords: [
-      "Software Developer",
-      "Full Stack Developer",
-      "React Developer",
-      "Next.js Developer",
-      "TypeScript Developer",
-      "Open Source",
-      "GitHub",
-      "Remote",
-    ],
+    name: site.name + " — Résumé",
+    url: site.url + "/resume",
+    contentUrl: site.url + site.resume,
+    encodingFormat: "application/pdf",
+    author: { "@type": "Person", name: site.name, url: site.url },
   };
 }

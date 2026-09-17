@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- Background -->
-  <circle cx="16" cy="16" r="16" fill="#111111"/>
-
-  <!-- Cat Head -->
-  <circle cx="16" cy="15" r="8" fill="#ffffff"/>
-
-  <!-- Ears -->
-  <polygon points="10,10 13,4 16,10" fill="#ffffff"/>
-  <polygon points="22,10 19,4 16,10" fill="#ffffff"/>
-
-  <!-- Glasses (bold for visibility) -->
-  <circle cx="13" cy="15" r="3" fill="none" stroke="#111111" stroke-width="2"/>
-  <circle cx="19" cy="15" r="3" fill="none" stroke="#111111" stroke-width="2"/>
-
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="100" fill="#101210"/><path d="M99 327V191h43v20c12-17 29-25 51-25 26 0 44 11 54 31 14-21 34-31 59-31 41 0 65 28 65 72v69h-45v-68c0-24-10-36-29-36-20 0-31 14-31 37v67h-45v-68c0-24-10-36-29-36-20 0-31 14-31 37v67z" fill="#eeefe7"/><circle cx="406" cy="306" r="23" fill="#d3ef93"/></svg>

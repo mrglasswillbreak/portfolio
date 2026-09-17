@@ -1,187 +1,74 @@
-"use client";
-
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { nasalization } from "@/app/fonts";
-import { selfData } from "@/constant";
 import Link from "next/link";
-import { LuMapPinned } from "react-icons/lu";
-
-export const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: false,
-    margin: "-60px",
-    amount: 0.2,
-  });
-
+import { Arrow } from "@/components/ui/Arrow";
+const capabilities = [
+  {
+    number: "01",
+    title: "Interfaces with intention",
+    copy: "Responsive websites, considered interactions, and clear visual systems. The details people see and feel.",
+    tags: "React / Next.js / TypeScript / CSS",
+  },
+  {
+    number: "02",
+    title: "More than a front page",
+    copy: "APIs, databases, authentication, and content tools. The foundations that make a product useful every day.",
+    tags: "Node.js / PostgreSQL / APIs / CMS",
+  },
+  {
+    number: "03",
+    title: "Built to keep moving",
+    copy: "From the first idea to deployment, with attention to accessibility, search visibility, and maintainable code.",
+    tags: "Git / Vercel / SEO / Accessibility",
+  },
+];
+export function About() {
   return (
     <section
+      className="about-section"
       id="about"
-      ref={ref}
-      className="py-24 max-w-6xl mx-auto relative overflow-hidden"
+      aria-labelledby="about-heading"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 overflow-x-hidden">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            className="flex justify-center md:justify-start"
-            initial={{ opacity: 0, x: -60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
-            transition={{
-              duration: 0.7,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            <motion.div
-              className="relative group w-full"
-              whileHover={{
-                scale: 1.02,
-                y: -4,
-                transition: {
-                  duration: 0.3,
-                  type: "spring" as const,
-                  stiffness: 400,
-                  damping: 25,
-                },
-              }}
-            >
-              <div
-                className="w-full max-w-md h-80 rounded-2xl overflow-hidden relative  border-2 group/image"
-                style={{ borderColor: "hsl(var(--glass-border))" }}
-              >
-                <motion.div
-                  initial={{ scale: 1.1, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.3 }}
-                  className="relative w-full h-full"
-                >
-                  <Image
-                    src="/images/me.png"
-                    alt="Profile Picture"
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 448px"
-                    className="object-cover transition-all duration-700 ease-in-out filter grayscale group-hover/image:grayscale-0 group-hover/image:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover/image:opacity-100 transition-opacity duration-700" />
-                </motion.div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: 60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.2,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.4,
-                ease: "easeOut",
-              }}
-            >
-              <h2
-                className={`${nasalization.className} text-4xl md:text-5xl font-bold relative`}
-                style={{ color: "hsl(var(--primary))" }}
-              >
-                About Me
-              </h2>
-            </motion.div>
-
-            <motion.div
-              className="space-y-6 leading-relaxed"
-              style={{ color: "hsl(var(--foreground) / 0.8)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              {selfData.about.map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  className="text-sm hover:text-primary-foreground transition-colors duration-200"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }
-                  }
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.6 + index * 0.1,
-                    ease: "easeOut",
-                  }}
-                  whileHover={{
-                    x: 4,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-4 text-sm"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.8,
-                ease: "easeOut",
-              }}
-            >
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  y: -2,
-                  transition: { duration: 0.3 },
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href={`https://www.google.com/maps/place/${selfData.current_location.city}+${selfData.current_location.state}+${selfData.current_location.country}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 group transition-all duration-300"
-                >
-                  <motion.div
-                    animate={
-                      isInView ? { rotate: [0, -8, 8, 0] } : { rotate: 0 }
-                    }
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: 1.5,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <LuMapPinned
-                      className="w-4 h-4 transition-colors group-hover:scale-110"
-                      style={{ color: "hsl(var(--primary))" }}
-                    />
-                  </motion.div>
-                  <span
-                    className="transition-colors"
-                    style={{ color: "hsl(var(--foreground))" }}
-                  >
-                    {selfData.current_location.city},{" "}
-                    {selfData.current_location.state}
-                  </span>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+      <div className="shell section">
+        <div className="about-grid">
+          <div>
+            <p className="eyebrow section-index">02 / A little about me</p>
+            <h2 id="about-heading">
+              Curious by nature.
+              <br />
+              <span className="serif-word">Builder</span> by choice.
+            </h2>
+          </div>
+          <div className="about-copy">
+            <p>
+              I’m Muhammed, a full-stack developer based in Lagos, Nigeria. I
+              enjoy the space where visual design meets practical
+              problem-solving.
+            </p>
+            <p>
+              My background in graphic design shapes how I build for the web:
+              start with what people need, make the important things clear, and
+              keep refining the details. Today, that means everything from
+              content-managed websites to an offline campus map.
+            </p>
+            <p>
+              I’m open to junior full-stack roles and freelance collaborations,
+              working remotely or in a hybrid team.
+            </p>
+            <Link href="/resume" className="text-link">
+              Get to know my background <Arrow diagonal />
+            </Link>
+          </div>
+        </div>
+        <div className="capabilities">
+          {capabilities.map((item) => (
+            <article key={item.number}>
+              <span className="eyebrow capability-number">{item.number} /</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <span className="capability-tags">{item.tags}</span>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
-};
+}

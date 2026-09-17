@@ -1,24 +1,13 @@
-# Muhammed Abdulhadi - Portfolio
-
-## About
-Muhammed Abdulhadi is a software developer focused on building clean, practical web products and sharing open-source work on GitHub.
-
-## Core Stack
-- JavaScript / TypeScript
-- React / Next.js
-- Tailwind CSS
-- Node.js
-
-## Projects
-- Portfolio and product-focused web applications
-- AI-assisted and developer-tooling experiments
-- Open-source repositories on GitHub
-
+# Muhammed Abdulhadi
+Full-stack developer based in Lagos, Nigeria. Open to junior full-stack roles and freelance collaborations.
+Portfolio: https://mrglasswillbreak.vercel.app
+## Selected work
+- [TurnRight](https://mrglasswillbreak.vercel.app/projects/turnright): Independent LASU Ojo campus navigation PWA with offline maps, routing, and 3D buildings. Routes have not been field-verified.
+- [RJWF](https://mrglasswillbreak.vercel.app/projects/rjwf): RemmyJ Wellness Foundation public website and private content studio.
+- [Photography Portfolio](https://mrglasswillbreak.vercel.app/projects/photography-portfolio): Photography website with a gallery, CMS, and first-party analytics.
+- [Fidarsi](https://mrglasswillbreak.vercel.app/projects/fidarsi): Corporate website and registration platform.
 ## Contact
+- Email: mrglasswillbreak@gmail.com
 - GitHub: https://github.com/mrglasswillbreak
 - LinkedIn: https://www.linkedin.com/in/muhammed-abdulhadi-7b9ba2278
-- X: https://x.com/mrglaswontbreak
-
-## Site Structure
-- `/`: Main portfolio landing page
-- `/resume`: Resume viewer and download section
+- Résumé: https://mrglasswillbreak.vercel.app/resume

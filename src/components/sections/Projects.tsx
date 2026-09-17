@@ -1,184 +1,107 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-
-import { nasalization } from "@/app/fonts";
-import { projectsData } from "@/constant";
-
-import { ProjectCard } from "../Cards";
-
-interface GithubProject {
-  name: string;
-  description: string;
-  github_link: string;
-  demo?: string;
-  tech: string[];
-}
-
-interface GithubRepo {
-  name: string;
-  description: string | null;
-  html_url: string;
-  homepage: string | null;
-  topics?: string[];
-  language: string | null;
-  fork: boolean;
-  archived: boolean;
-  stargazers_count: number;
-  updated_at: string;
-}
-
-export const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-80px",
-    amount: 0.1,
-  });
-  const [githubProjects, setGithubProjects] = useState<GithubProject[]>([]);
-  const [activeFilter, setActiveFilter] =
-    useState<"featured" | "live">("featured");
-
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const res = await fetch(
-          "https://api.github.com/users/mrglasswillbreak/repos?per_page=100&sort=updated"
-        );
-        if (!res.ok) return;
-
-        const repos = (await res.json()) as GithubRepo[];
-        const mapped = repos
-          .filter((repo) => !repo.fork && !repo.archived)
-          .sort((a, b) => {
-            if (b.stargazers_count !== a.stargazers_count) {
-              return b.stargazers_count - a.stargazers_count;
-            }
-            return (
-              new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-            );
-          })
-          .slice(0, 9)
-          .map((repo) => {
-            const topics = repo.topics?.slice(0, 3) ?? [];
-            const tech = [
-              ...(repo.language ? [repo.language] : []),
-              ...topics.filter(
-                (topic) => topic.toLowerCase() !== repo.language?.toLowerCase()
-              ),
-            ].slice(0, 4);
-
-            return {
-              name: repo.name,
-              description:
-                repo.description ?? "A repository from my GitHub profile.",
-              github_link: repo.html_url,
-              demo:
-                repo.homepage && repo.homepage.trim().length > 0
-                  ? repo.homepage
-                  : undefined,
-              tech: tech.length > 0 ? tech : ["GitHub"],
-            };
-          });
-
-        if (mapped.length > 0) {
-          setGithubProjects(mapped);
-        }
-      } catch {
-        // Keep fallback static projects if GitHub API is unavailable.
-      }
-    };
-
-    loadProjects();
-  }, []);
-
-  const displayedProjects =
-    activeFilter === "featured"
-      ? projectsData
-      : githubProjects.length > 0
-        ? githubProjects
-        : projectsData;
-
-  const usingFallback =
-    activeFilter === "live" && githubProjects.length === 0;
-
+import Image from "next/image";
+import Link from "next/link";
+import { projectsData } from "@/constant/projects";
+import { site } from "@/lib/site";
+import { Arrow } from "@/components/ui/Arrow";
+export function Projects() {
   return (
     <section
-      ref={ref}
+      className="section shell"
       id="projects"
-      className="py-24 max-w-6xl mx-auto relative overflow-hidden"
+      aria-labelledby="work-heading"
     >
-      <div className="mx-auto px-4 lg:px-8 relative">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <motion.h2
-            className={`${nasalization.className} text-4xl md:text-5xl font-bold text-primary`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow section-index">01 / Selected work</p>
+          <h2 id="work-heading">
+            Ideas, made <span className="serif-word">real.</span>
+          </h2>
+        </div>
+        <p>
+          Four projects. Different problems.
+          <br />
+          The same care for the details.
+        </p>
+      </div>
+      <div className="project-list">
+        {projectsData.map((project, index) => (
+          <article
+            className={"project-row project-" + project.slug}
+            key={project.slug}
           >
-            My Projects
-          </motion.h2>
-        </motion.div>
-
-        <motion.div
-          className="flex flex-wrap items-center justify-center gap-3 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-        >
-          {[
-            { key: "featured", label: "Featured" },
-            { key: "live", label: "Live from GitHub" },
-          ].map((filter) => (
-            <button
-              key={filter.key}
-              onClick={() =>
-                setActiveFilter(filter.key as "featured" | "live")
+            <Link
+              href={"/projects/" + project.slug}
+              className="project-visual"
+              aria-label={"Read the " + project.name + " case study"}
+              style={
+                { "--project-color": project.color } as React.CSSProperties
               }
-              className={`px-4 py-2 rounded-full border text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
-                activeFilter === filter.key
-                  ? "bg-primary/15 text-primary border-primary/40 shadow-sm"
-                  : "text-muted-foreground border-border hover:text-primary hover:border-primary/40"
-              }`}
-              aria-pressed={activeFilter === filter.key}
             >
-              {filter.label}
-            </button>
-          ))}
-        </motion.div>
-
-        {usingFallback && (
-          <p className="text-center text-xs text-muted-foreground mb-4">
-            Live GitHub data is unavailable right now, showing featured work
-            instead.
-          </p>
-        )}
-
-        <motion.div
-          className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+              <div className="project-image-frame">
+                <div className="browser-chrome" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <small>{new URL(project.demo).hostname}</small>
+                  <Arrow diagonal />
+                </div>
+                <Image
+                  src={project.images[0].src}
+                  alt={project.images[0].alt}
+                  width={project.images[0].width}
+                  height={project.images[0].height}
+                  sizes="(max-width: 800px) 92vw, 58vw"
+                  className="project-screenshot"
+                />
+              </div>
+              <span className="project-visual-link" aria-hidden="true">
+                <Arrow diagonal />
+              </span>
+            </Link>
+            <div className="project-copy">
+              <div className="project-meta">
+                <span className="project-number">0{index + 1}</span>
+                <span className="eyebrow">{project.category}</span>
+              </div>
+              <h3>
+                <Link href={"/projects/" + project.slug}>{project.name}</Link>
+              </h3>
+              <p className="project-headline">{project.headline}</p>
+              <p className="project-description">{project.description}</p>
+              <ul className="tech-list" aria-label="Technologies">
+                {project.tech.slice(0, 4).map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+              <div className="project-actions">
+                <Link href={"/projects/" + project.slug} className="text-link">
+                  View case study <Arrow />
+                </Link>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="quiet-link"
+                  aria-label={"Visit " + project.name + " live site"}
+                >
+                  Live site <Arrow diagonal />
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="more-work">
+        <span>There’s always something else in the making.</span>
+        <a
+          href={site.github}
+          target="_blank"
+          rel="noreferrer"
+          className="text-link"
         >
-          {displayedProjects.map((proj, index) => (
-            <ProjectCard
-              key={proj.name}
-              index={index}
-              title={proj.name}
-              desc={proj.description}
-              github={proj.github_link}
-              demo={proj.demo}
-              tech={proj.tech}
-            />
-          ))}
-        </motion.div>
+          More on GitHub <Arrow diagonal />
+        </a>
       </div>
     </section>
   );
-};
+}

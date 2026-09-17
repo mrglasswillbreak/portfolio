@@ -1,121 +1,72 @@
 import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
-import { render, pretty } from "@react-email/render";
-import validator from "validator";
-
+import { render } from "@react-email/render";
+import { createContactHandler } from "@/lib/contact";
+import { site } from "@/lib/site";
 import { EmailTemplate } from "@/components/template/Email";
 import { OwnerEmailTemplate } from "@/components/template/OwnerEmail";
 
-export async function POST(request: Request) {
-  const body = await request.json();
-  const { senderName, senderEmail, reasonToContact, senderMsg } = body;
-
-  if (
-    !senderName ||
-    !senderEmail ||
-    !reasonToContact ||
-    !senderMsg ||
-    typeof senderName !== "string" ||
-    typeof senderEmail !== "string" ||
-    typeof reasonToContact !== "string" ||
-    typeof senderMsg !== "string"
-  ) {
-    return NextResponse.json({ error: "Invalid input data" }, { status: 400 });
-  }
-
-  if (!validator.isEmail(senderEmail)) {
-    return NextResponse.json(
-      { error: "Email format is not valid" },
-      { status: 400 }
+export const runtime = "nodejs";
+export const POST = createContactHandler({
+  configured: () =>
+    Boolean(process.env.email_from && process.env.email_password),
+  verifyEmail: process.env.QEV_API_KEY
+    ? async (email) => {
+        const params = new URLSearchParams({
+          email,
+          apikey: process.env.QEV_API_KEY!,
+        });
+        const response = await fetch(
+          "https://api.quickemailverification.com/v1/verify?" +
+            params.toString(),
+          { signal: AbortSignal.timeout(7000), cache: "no-store" },
+        );
+        if (!response.ok) throw new Error("Verification unavailable");
+        return (await response.json()).result === "valid";
+      }
+    : undefined,
+  deliver: async ({ senderName, senderEmail, reasonToContact, senderMsg }) => {
+    const transport = nodemailer.createTransport({
+      service: "gmail",
+      connectionTimeout: 8000,
+      greetingTimeout: 8000,
+      socketTimeout: 10000,
+      auth: { user: process.env.email_from, pass: process.env.email_password },
+    });
+    const html = await render(
+      OwnerEmailTemplate({
+        senderName,
+        senderEmail,
+        contactReason: reasonToContact,
+        userMessage: senderMsg,
+      }),
     );
-  }
-
-  try {
-    const qevResponse = await fetch(
-      `http://api.quickemailverification.com/v1/verify?email=${senderEmail}&apikey=${process.env.QEV_API_KEY}`
-    );
-
-    const data = await qevResponse.json();
-
-    console.log("QuickEmailVerification response:", data);
-
-    if (data.result !== "valid") {
-      return NextResponse.json(
-        { error: "Email address is not valid" },
-        { status: 400 }
-      );
+    await transport.sendMail({
+      from: { name: "Portfolio contact", address: process.env.email_from! },
+      to: site.email,
+      replyTo: { name: senderName, address: senderEmail },
+      subject: reasonToContact + " — " + senderName,
+      html,
+      text: [senderName, senderEmail, reasonToContact, senderMsg].join("\n\n"),
+    });
+    // The owner's accepted message is authoritative; a failed courtesy reply must not invite duplicate submissions.
+    try {
+      await transport.sendMail({
+        from: { name: site.name, address: process.env.email_from! },
+        to: senderEmail,
+        replyTo: site.email,
+        subject: "Thanks for reaching out, " + senderName,
+        html: await render(
+          EmailTemplate({
+            userName: senderName,
+            contactReason: reasonToContact,
+            userMessage: senderMsg,
+          }),
+        ),
+      });
+    } catch {
+      console.error("Contact acknowledgement could not be delivered.");
+    } finally {
+      transport.close();
     }
-  } catch (err) {
-    console.error("QuickEmailVerification API failed:", err);
-    return NextResponse.json(
-      { error: "Email validation service unavailable" },
-      { status: 500 }
-    );
-  }
-
-  const [userHtml, ownerHtml] = await Promise.all([
-    pretty(
-      await render(
-        EmailTemplate({
-          userName: senderName,
-          contactReason: reasonToContact,
-          userMessage: senderMsg,
-        })
-      )
-    ),
-    pretty(
-      await render(
-        OwnerEmailTemplate({
-          senderName,
-          senderEmail,
-          contactReason: reasonToContact,
-          userMessage: senderMsg,
-        })
-      )
-    ),
-  ]);
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.email_from,
-      pass: process.env.email_password,
-    },
-  });
-
-  // Notification email to owner
-  const ownerMessage = {
-    from: `"${senderName}" <${process.env.email_from}>`,
-    to: "moetheman111@gmail.com",
-    replyTo: `${senderName} <${senderEmail}>`,
-    subject: `New contact form message from ${senderName}: ${reasonToContact}`,
-    html: ownerHtml,
-    headers: { "X-Entity-Ref-ID": "newmail" },
-  };
-
-  // Auto-reply confirmation to the sender
-  const userMessage = {
-    from: `"Muhammed Abdulhadi" <${process.env.email_from}>`,
-    to: senderEmail,
-    subject: `Got your message, ${senderName}! 👋`,
-    html: userHtml,
-    headers: { "X-Entity-Ref-ID": "autoreply" },
-  };
-
-  try {
-    await Promise.all([
-      transporter.sendMail(ownerMessage),
-      transporter.sendMail(userMessage),
-    ]);
-    return NextResponse.json(
-      { message: `Email has been sent to ${senderEmail} successfully` },
-      { status: 200 }
-    );
-  } catch (err) {
-    console.error(`Error sending email:`, err);
-    return NextResponse.json(
-      { error: "Failed to send email" },
-      { status: 500 }
-    );
-  }
-}
+  },
+});

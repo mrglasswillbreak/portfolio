@@ -1,130 +1,73 @@
-# Muhammed Abdulhadi — Developer Portfolio
+# Muhammed Abdulhadi — Portfolio
 
-[![Live Site](https://img.shields.io/badge/Live-mrglasswillbreak.vercel.app-000000?logo=vercel)](https://mrglasswillbreak.vercel.app)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-20232a?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06b6d4?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vercel Analytics](https://img.shields.io/badge/Analytics-enabled-black?logo=vercel)](https://vercel.com/analytics)
+A project-led portfolio for my full-stack development work, built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-A production-ready personal portfolio built with the **Next.js 15 App Router**, React 19, and Tailwind CSS. Features section-aware navigation, animated UI transitions, a responsive project showcase, and a built-in contact form with server-side email delivery.
+[Visit the portfolio](https://mrglasswillbreak.vercel.app) · [GitHub profile](https://github.com/mrglasswillbreak) · [Résumé](https://mrglasswillbreak.vercel.app/resume)
 
-> **Live at:** [mrglasswillbreak.vercel.app](https://mrglasswillbreak.vercel.app)
+![Portfolio social preview](public/images/thumbnail.png)
 
----
+## Selected projects
 
-## Preview
+| Project               | Focus                                                                              | Case study                                                                 |
+| --------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| TurnRight             | LASU Ojo campus navigation, offline maps, routing, 3D buildings, and owner editing | [Read](https://mrglasswillbreak.vercel.app/projects/turnright)             |
+| RJWF                  | Nonprofit website and private visual content studio                                | [Read](https://mrglasswillbreak.vercel.app/projects/rjwf)                  |
+| Photography Portfolio | Photography gallery, CMS, and first-party analytics                                | [Read](https://mrglasswillbreak.vercel.app/projects/photography-portfolio) |
+| Fidarsi               | Corporate website and protected registration workflows                             | [Read](https://mrglasswillbreak.vercel.app/projects/fidarsi)               |
 
-![Portfolio preview — hero section](public/images/thumbnail.png)
+The homepage and case studies use a shared, typed project catalog. Screenshots are local optimized WebP assets; their sources and capture details are documented in [SOURCES.md](public/images/projects/SOURCES.md). Only public repositories receive source-code links.
 
----
+## Development
 
-## Features
+Use Node.js 22.13+ and npm.
 
-- **Section-aware navigation** with scroll progress indicator and smooth scrolling
-- **Responsive project showcase** with toggle between curated highlights and live GitHub data
-- **Contact form** with server-side email delivery via Nodemailer
-- **SEO foundation** including Open Graph, Twitter cards, structured data, robots, and sitemap routes
-- **Animated UI** using the Motion library with accessibility-conscious reduced-motion support
-- **Self-hosted fonts** (Inter and Cutive Mono via `@fontsource`) for reliable offline builds
-- **PDF resume viewer** with an error boundary and fullscreen support
-
----
-
-## Tech Stack
-
-| Layer | Technologies |
-|---|---|
-| **Framework** | Next.js 15 (App Router), React 19, TypeScript |
-| **Styling** | Tailwind CSS, CSS variables, custom glass-morphism design system |
-| **Animation** | Motion (Framer Motion), CSS keyframes |
-| **UI Components** | Radix UI primitives, React Icons, custom component library |
-| **Backend** | Next.js API routes, Nodemailer |
-| **Deployment** | Vercel (with Analytics) |
-
----
-
-## Project Structure
-
-```text
-src/
-├── app/
-│   ├── (main)/page.tsx          # homepage with all sections
-│   ├── api/send/                # contact form API route
-│   ├── resume/                  # resume viewer page
-│   ├── layout.tsx               # root layout, metadata, structured data
-│   ├── not-found.tsx            # custom 404 page
-│   ├── fonts.ts                 # self-hosted font configuration
-│   ├── robots.ts                # robots.txt generation
-│   └── sitemap.ts               # sitemap generation
-├── components/
-│   ├── sections/                # Hero, About, Skills, Experience, Projects, Contact
-│   ├── Cards/                   # ProjectCard, ExperienceCard, SkillsCard, ContactFormCard
-│   ├── common/                  # Navbar, Footer, Background, PreLoader
-│   ├── ui/                      # Button, Card, Badge primitives
-│   └── template/                # Email templates
-├── constant/                    # Content data (self, projects, experience, skills)
-├── lib/                         # Utilities, structured data helpers, image processing
-└── assets/                      # Local fonts and images
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm
-
-### Installation
-
-```bash
-npm install
+```sh
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open the local address printed by Next.js.
 
-### Build and Lint
-
-```bash
+```sh
 npm run lint
+npm run typecheck
+npm test
 npm run build
-npm run start
+npm start
 ```
 
-> Fonts are self-hosted via `@fontsource`, so builds do not depend on external font CDNs.
+Tests exercise contact validation and delivery failures through injected dependencies, plus the form’s pending, success, retry, and error states with a simulated DOM. They never send real emails. Type checking requires generated Next.js types, available after the first build or development run.
 
----
+## Content and routes
 
-## Environment Variables
+- `src/constant/projects.ts`: the four project summaries, images, links, and case-study content.
+- `src/lib/site.ts`: canonical URL, contact details, social links, and résumé path.
+- `src/components/sections/`: homepage introduction, work, background, experience, and contact.
+- `src/app/projects/[slug]/page.tsx`: statically generated case studies.
+- `src/app/globals.css`: the responsive charcoal/lime design system and reduced-motion styles.
+- `/resume`: viewer and download links for the existing résumé PDF.
+- `/api/send`: contact handler; request fields remain `senderName`, `senderEmail`, `reasonToContact`, and `senderMsg`.
 
-The contact form requires the following variables in a `.env` file:
+The PDF retains its existing asset filename for link compatibility; its download label uses Muhammed Abdulhadi.
 
-| Variable | Description |
-|---|---|
-| `email_from` | Sender email address |
-| `email_password` | App-specific email password |
-| `QEV_API_KEY` | QuickEmailVerification API key |
+## Contact configuration
 
----
+Set server-side variables in the deployment environment:
 
-## Customization
+| Variable         | Purpose                                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------------------- |
+| `email_from`     | Gmail address used to send contact messages                                                        |
+| `email_password` | Gmail app password                                                                                 |
+| `QEV_API_KEY`    | Optional QuickEmailVerification key; verification uses HTTPS and a bounded timeout when configured |
 
-To adapt this portfolio for your own use, update these content files:
+Messages are delivered to **mrglasswillbreak@gmail.com**. Invalid input is rejected before external calls. Missing SMTP configuration returns an explicit unavailable response with a direct-email fallback. The owner’s accepted message determines success; a failed courtesy acknowledgement does not mark that message as undelivered. Contact details and provider responses are not logged.
 
-| File | Purpose |
-|---|---|
-| `src/constant/self.ts` | Name, role, bio, socials, availability |
-| `src/constant/experience.ts` | Work and training timeline |
-| `src/constant/projects.ts` | Featured project cards and links |
-| `src/constant/skillsData.tsx` | Grouped skill set visuals |
+## Publishing
 
----
+The production branch is `master`, connected to the existing Vercel deployment. Verify the build and local preview before publishing. Metadata, sitemap, robots, social previews, and structured data use `https://mrglasswillbreak.vercel.app`.
 
-## Contact
+The GitHub profile README lives in the separate [mrGlassWillBreak repository](https://github.com/mrglasswillbreak/mrGlassWillBreak); its project images reference the public screenshot assets here.
 
-- **GitHub:** [mrglasswillbreak](https://github.com/mrglasswillbreak)
-- **LinkedIn:** [Muhammed Abdulhadi](https://www.linkedin.com/in/muhammed-abdulhadi-7b9ba2278)
-- **X:** [@mrglaswontbreak](https://x.com/mrglaswontbreak)
+## Design and accessibility
+
+Server-rendered content, self-hosted Inter and Cutive Mono, semantic headings, keyboard-visible focus, a skip link, responsive navigation, explicit image dimensions, and reduced-motion support. Project images below the fold load lazily. The homepage has no forced loading screen or live GitHub API dependency.

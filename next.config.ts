@@ -1,77 +1,31 @@
 import type { NextConfig } from "next";
-
 const nextConfig: NextConfig = {
-  images: {
-    unoptimized: false,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "aarab.vercel.app",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
-
   compress: true,
-
-  experimental: {
-    optimizeCss: true,
-  },
-
   async headers() {
     return [
       {
         source: "/(.*)",
         headers: [
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
-          },
-          {
-            key: "X-Robots-Tag",
-            value: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-          },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
       },
       {
         source: "/docs/:path*",
         headers: [
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
-          {
-            key: "Content-Type",
-            value: "application/pdf",
-          },
-          {
-            key: "Content-Disposition",
-            value: "inline",
-          },
+          { key: "Content-Type", value: "application/pdf" },
+          { key: "Content-Disposition", value: "inline" },
         ],
       },
     ];
   },
-
   async redirects() {
     return [
-      {
-        source: "/home",
-        destination: "/",
-        permanent: true,
-      },
+      { source: "/home", destination: "/", permanent: true },
       {
         source: "/email",
-        destination: "mailto:aarab.nishchal@gmail.com",
+        destination: "mailto:mrglasswillbreak@gmail.com",
         permanent: true,
       },
       {
@@ -86,11 +40,10 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/github",
-        destination: "www.github.com/aarabii",
+        destination: "https://github.com/mrglasswillbreak",
         permanent: true,
       },
     ];
   },
 };
-
 export default nextConfig;

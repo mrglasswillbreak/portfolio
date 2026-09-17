@@ -1,11 +1,11 @@
 {
   "name": "Muhammed Abdulhadi",
-  "short_name": "M. Abdulhadi",
-  "description": "Portfolio of Muhammed Abdulhadi — software developer and open-source builder.",
+  "short_name": "MA",
+  "description": "Full-stack developer — thoughtful design, useful things.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#a855f7",
+  "background_color": "#101210",
+  "theme_color": "#101210",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,11 +15,6 @@
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
       "type": "image/png"
     }
   ]

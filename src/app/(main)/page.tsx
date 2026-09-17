@@ -1,41 +1,16 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-import { Navbar, Footer } from "@/components/common";
-import {
-  Hero,
-  About,
-  Skills,
-  Experience,
-  Projects,
-  Contact,
-} from "@/components/sections";
-import { PreLoader, Background } from "@/components/common";
-
+import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
+import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
+import { Contact } from "@/components/sections/Contact";
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadTimer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(loadTimer);
-  }, []);
-
-  if (loading) return <PreLoader />;
-
   return (
-    <div className="min-h-screen relative">
-      <Background />
-        <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
-
-
-    </div>
+    <>
+      <Hero />
+      <Projects />
+      <About />
+      <Experience />
+      <Contact />
+    </>
   );
 }

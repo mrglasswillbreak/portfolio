@@ -1,151 +1,74 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-
-import { Button } from "@/components/ui/button";
-import { selfData } from "@/constant";
-
-import { quentine, mono } from "@/app/fonts";
-
-export const Hero = () => {
-  const ref = useRef(null);
-
-  const handleContactScroll = () => {
-    if (typeof window === "undefined") return;
-    const contactSection = document.getElementById("contact");
-    contactSection?.scrollIntoView({ behavior: "smooth" });
-  };
-
+import Image from "next/image";
+import { Arrow } from "@/components/ui/Arrow";
+export function Hero() {
   return (
-    <section
-      id="hero"
-      ref={ref}
-      className="min-h-screen flex items-center justify-start px-6 relative pt-35 sm:pt-39"
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-
-      <div className="max-w-full sm:max-w-7xl mx-auto w-full relative z-10">
-        <motion.div
-          className="max-w-4xl space-y-8"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <div className="space-y-6">
-            <motion.h1
-              className={`${quentine.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight`}
-              style={{ color: "hsl(var(--primary))" }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              whileHover={{
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
-            >
-              {selfData.name}
-            </motion.h1>
-
-            <motion.p
-              className={`${mono.className} text-lg md:text-xl`}
-              style={{ color: "hsl(var(--secondary))" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              {selfData.roles[0]}
-            </motion.p>
-
-            <motion.p
-              className="text-base md:text-lg max-w-2xl leading-relaxed"
-              style={{ color: "hsl(var(--foreground) / 0.8)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.6 }}
-            >
-              {selfData.bio}
-            </motion.p>
+    <section className="hero shell" aria-labelledby="hero-heading">
+      <div className="hero-kicker">
+        <span className="eyebrow">Full-stack developer / Lagos, NG</span>
+        <span className="availability">
+          <span className="status-dot" /> Open to opportunities
+        </span>
+      </div>
+      <h1 id="hero-heading" className="hero-title">
+        Thoughtful design.
+        <br />
+        Useful <span className="serif-word">things.</span>
+        <span className="hero-asterisk" aria-hidden="true">
+          ✳
+        </span>
+      </h1>
+      <div className="hero-bottom">
+        <div className="hero-intro">
+          <p>
+            I’m <strong>Muhammed Abdulhadi</strong>.<br />I turn ideas into
+            websites and applications
+            <br className="desktop-break" /> that look good, feel right, and
+            work hard.
+          </p>
+          <div className="hero-actions">
+            <Link href="#projects" className="button button-primary">
+              Explore my work <Arrow />
+            </Link>
+            <Link href="#contact" className="text-link">
+              Let’s talk <Arrow diagonal />
+            </Link>
           </div>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-          >
-            <motion.div
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="relative group overflow-hidden btn-primary shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Link href="/resume">
-                  <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-30"
-                    style={{ background: "var(--glass-shimmer)" }}
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                  />
-                  <span className="relative z-10 font-medium">View Resume</span>
-                </Link>
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="relative group overflow-hidden border-primary/40 hover:border-primary/70 hover:bg-primary/5 shadow-lg transition-all duration-300"
-                onClick={handleContactScroll}
-              >
-                <span className="relative z-10 font-medium">Let&apos;s Talk</span>
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            <div className="rounded-xl border border-primary/20 bg-white/5 p-4 shadow-sm">
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                Availability
-              </p>
-              <p className="font-semibold text-primary">
-                {selfData.availability.status}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {selfData.availability.work_model}
-              </p>
-            </div>
-            <div className="rounded-xl border border-primary/20 bg-white/5 p-4 shadow-sm">
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                Based in
-              </p>
-              <p className="font-semibold text-primary">
-                {selfData.current_location.city}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {selfData.current_location.country}
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
+        </div>
+        <Link
+          href="/projects/turnright"
+          className="hero-preview"
+          aria-label="Explore TurnRight, a campus navigation project"
+        >
+          <div className="hero-preview-image">
+            <Image
+              src="/images/projects/turnright-map.webp"
+              alt="TurnRight’s 3D campus map"
+              fill
+              sizes="(max-width: 700px) 42vw, 210px"
+              priority
+            />
+          </div>
+          <div className="hero-preview-info">
+            <span className="eyebrow">In the spotlight</span>
+            <span>
+              TurnRight <Arrow diagonal />
+            </span>
+            <small>Finding a better way around.</small>
+          </div>
+        </Link>
+      </div>
+      <div className="hero-foot">
+        <span className="eyebrow">Independent mind. End-to-end builder.</span>
+        <a
+          href="#projects"
+          className="scroll-cue"
+          aria-label="Scroll to selected work"
+        >
+          <span>Scroll to explore</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
   );
-};
+}

@@ -1,14 +1,8 @@
 import { MetadataRoute } from "next";
-
+import { site } from "@/lib/site";
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api", "/private"],
-      },
-    ],
-    sitemap: "https://github.com/mrglasswillbreak",
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/"] },
+    sitemap: site.url + "/sitemap.xml",
   };
 }
