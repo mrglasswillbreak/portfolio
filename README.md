@@ -14,6 +14,7 @@ A project-led portfolio for my full-stack development work, built with Next.js A
 | RJWF                  | Nonprofit website and private visual content studio                                | [Read](https://mrglasswillbreak.vercel.app/projects/rjwf)                  |
 | Photography Portfolio | Photography gallery, CMS, and first-party analytics                                | [Read](https://mrglasswillbreak.vercel.app/projects/photography-portfolio) |
 | Fidarsi               | Corporate website and protected registration workflows                             | [Read](https://mrglasswillbreak.vercel.app/projects/fidarsi)               |
+| KinSous               | Culinary marketplace, bidding, private messaging, order workflows, and PWA         | [Read](https://mrglasswillbreak.vercel.app/projects/kinsous)               |
 
 The homepage and case studies use a shared, typed project catalog. Screenshots are local optimized WebP assets; their sources and capture details are documented in [SOURCES.md](public/images/projects/SOURCES.md). Only public repositories receive source-code links.
 
@@ -40,7 +41,7 @@ Tests exercise contact validation and delivery failures through injected depende
 
 ## Content and routes
 
-- `src/constant/projects.ts`: the four project summaries, images, links, and case-study content.
+- `src/constant/projects.ts`: project summaries, images, links, and case-study content.
 - `src/lib/site.ts`: canonical URL, contact details, social links, and résumé path.
 - `src/components/sections/`: homepage introduction, work, background, experience, and contact.
 - `src/app/projects/[slug]/page.tsx`: statically generated case studies.

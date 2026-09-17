@@ -5,6 +5,7 @@ import { inter, mono } from "./fonts";
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
 import { site } from "@/lib/site";
+import { projectsData } from "@/constant/projects";
 import {
   generatePersonStructuredData,
   generateWebsiteStructuredData,
@@ -74,7 +75,7 @@ export default function RootLayout({
             ]),
           }}
         />
-        <Navbar />
+        <Navbar projectCount={projectsData.length} />
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>

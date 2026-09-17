@@ -18,7 +18,7 @@ export function Projects() {
           </h2>
         </div>
         <p>
-          Four projects. Different problems.
+          {projectsData.length} projects. Different problems.
           <br />
           The same care for the details.
         </p>

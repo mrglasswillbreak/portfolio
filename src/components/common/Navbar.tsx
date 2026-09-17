@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Arrow } from "@/components/ui/Arrow";
 
-export function Navbar() {
+export function Navbar({ projectCount }: { projectCount: number }) {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
@@ -48,7 +48,10 @@ export function Navbar() {
           className={"main-nav " + (open ? "is-open" : "")}
         >
           <Link href="/#projects" onClick={() => setOpen(false)}>
-            Work<span className="nav-count">04</span>
+            Work
+            <span className="nav-count">
+              {String(projectCount).padStart(2, "0")}
+            </span>
           </Link>
           <Link href="/#about" onClick={() => setOpen(false)}>
             About

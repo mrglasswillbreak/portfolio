@@ -245,6 +245,69 @@ export const projectsData: Project[] = [
     approach:
       "Next.js App Router provides the public pages and server-side platform flows. PostgreSQL stores registration and session data, Resend handles transactional email, and private Blob storage supports verification documents. Public content and protected account actions have separate access and indexing rules.",
   },
+  {
+    slug: "kinsous",
+    name: "KinSous",
+    category: "Marketplace · Food & community",
+    headline: "A taste of home. A helping hand nearby.",
+    description:
+      "A Nigeria-first culinary marketplace connecting food requests with local helpers, bringing discovery, bidding, private conversations, and order progress into one place.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Vercel Blob",
+    ],
+    demo: "https://kinsous2.vercel.app",
+    github_link: "https://github.com/mrglasswillbreak/kinSous2",
+    color: "#e7aa73",
+    images: [
+      {
+        src: "/images/projects/kinsous-home.webp",
+        alt: "KinSous marketplace homepage with a culinary introduction, account welcome, and sample marketplace activity",
+        caption:
+          "The marketplace homepage, captured locally with seeded demonstration accounts and sample activity.",
+        width: 1234,
+        height: 712,
+      },
+      {
+        src: "/images/projects/kinsous-bounties.webp",
+        alt: "KinSous bounty board with searchable food requests, category filters, budgets, and bid counts",
+        caption:
+          "The bounty board presents food requests and category filters. Listings shown are local demonstration data.",
+        width: 1234,
+        height: 712,
+      },
+    ],
+    overview:
+      "KinSous explores how a marketplace can connect people looking for familiar food with people who can help prepare or source it. Seekers post requests, helpers discover opportunities and submit bids, and both sides can coordinate the work through private conversations and order milestones.",
+    features: [
+      {
+        title: "From a craving to a request",
+        description:
+          "A searchable bounty board supports food requests, category filters, budgets, and helper bids, alongside profiles for discovering culinary help.",
+      },
+      {
+        title: "Conversations around the work",
+        description:
+          "Private messaging connects seekers and helpers, with attachment support, typing indicators, and tools for blocking and reporting.",
+      },
+      {
+        title: "An order with clear stages",
+        description:
+          "Order milestones track progress through delivery and confirmation. Server-side payment workflows include NGN checkout, verified payment events, and operator review for payouts, refunds, and disputes.",
+      },
+      {
+        title: "A marketplace that travels with you",
+        description:
+          "An installable PWA provides an offline fallback and account-scoped draft recovery. Responsive navigation, theme options, and explicit loading and error states support everyday use.",
+      },
+    ],
+    approach:
+      "Next.js App Router connects the React interface to Neon PostgreSQL, authenticated sessions, and transactional order rules. Flutterwave integration handles checkout and payment verification, with Resend for email and private Vercel Blob storage for attachments. The service worker caches approved public assets while keeping private pages and APIs network-only.",
+    note: "A marketplace project with a hosted sign-in experience. Screenshots use local demonstration data, not customer activity. Live payments and delayed payouts require provider configuration and approval; audio/video calls and live GPS are deferred.",
+  },
 ];
 export function getProject(slug: string) {
   return projectsData.find((project) => project.slug === slug);
