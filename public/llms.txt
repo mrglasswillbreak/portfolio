@@ -2,10 +2,11 @@
 Full-stack developer based in Lagos, Nigeria. Open to junior full-stack roles and freelance collaborations.
 Portfolio: https://mrglasswillbreak.vercel.app
 ## Selected work
-- [TurnRight](https://mrglasswillbreak.vercel.app/projects/turnright): Independent LASU Ojo campus navigation PWA with offline maps, routing, and 3D buildings. Routes have not been field-verified.
-- [RJWF](https://mrglasswillbreak.vercel.app/projects/rjwf): RemmyJ Wellness Foundation public website and private content studio.
+- [TurnRight](https://mrglasswillbreak.vercel.app/projects/turnright): Independent multi-campus GIS and navigation platform for LASU Ojo and UNILAG Akoka, with walking/driving routes, verified offline packages, 3D buildings, and a private team editor. Routes and entrances still require field verification.
+- [RJWF](https://mrglasswillbreak.vercel.app/projects/rjwf): RemmyJ Wellness Foundation website, guided content studio, and private submissions inbox.
 - [Photography Portfolio](https://mrglasswillbreak.vercel.app/projects/photography-portfolio): Photography website with a gallery, CMS, and first-party analytics.
 - [Fidarsi](https://mrglasswillbreak.vercel.app/projects/fidarsi): Corporate website and registration platform.
+- [KinSous](https://mrglasswillbreak.vercel.app/projects/kinsous): Culinary marketplace with bidding, private messaging, order milestones, payment workflows, and a PWA. Live payments require provider setup and approval.
 ## Contact
 - Email: mrglasswillbreak@gmail.com
 - GitHub: https://github.com/mrglasswillbreak

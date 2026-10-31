@@ -25,59 +25,76 @@ export const projectsData: Project[] = [
   {
     slug: "turnright",
     name: "TurnRight",
-    category: "Maps · Navigation · PWA",
-    headline: "A little less lost. A lot more campus.",
+    category: "GIS · Navigation · PWA",
+    headline: "Explore a campus. Build a better map.",
     description:
-      "An offline-capable walking companion for LASU Ojo. Campus search, directions, and detailed 3D buildings — right in your browser.",
-    tech: ["React", "TypeScript", "MapLibre", "Three.js", "Vite"],
+      "A multi-campus map and GIS platform for LASU Ojo and UNILAG Akoka, with walking and driving directions, verified offline downloads, and a private team editor.",
+    tech: [
+      "React",
+      "TypeScript",
+      "MapLibre",
+      "Three.js",
+      "Python",
+      "Supabase / PostGIS",
+      "Vite",
+    ],
     demo: "https://turnright.vercel.app/",
-    github_link: "https://github.com/mrglasswillbreak/TurnRight",
     color: "#8db8ef",
     images: [
       {
-        src: "/images/projects/turnright-map.webp",
-        alt: "TurnRight campus map showing the LASU Senate Building in 3D and its place details",
+        src: "/images/projects/turnright-map-2026-10.webp",
+        alt: "Published TurnRight LASU campus map with 3D buildings and a Senate Building photograph",
         caption:
-          "The public campus map, with place details and enhanced building models.",
+          "LASU Ojo’s published 3D campus map, captured on 18 October 2026 with landmark details and reference photography.",
         width: 1440,
         height: 1000,
       },
       {
-        src: "/images/projects/turnright-editor.webp",
-        alt: "TurnRight owner editor with the campus map and feature explorer",
+        src: "/images/projects/turnright-editor-2026-10.webp",
+        alt: "TurnRight GIS editor with numeric rectangle construction, reference snapping, and a drawing preview",
         caption:
-          "Owner workspace demonstration, captured with local authentication and API fixtures; no private reports or production drafts are shown.",
+          "Precision drawing in the team editor, captured on 18 October 2026 with isolated demonstration accounts and API fixtures.",
         width: 1440,
         height: 1000,
       },
     ],
     overview:
-      "Finding a building should be the easy part of a day on campus. TurnRight brings LASU Ojo’s places, walking paths, and building models into one browser-based map, with on-device search and routing and a downloadable campus package for offline use.",
+      "TurnRight has grown from a LASU walking map into a platform for exploring and maintaining multiple campuses. Visitors can switch between LASU Ojo and UNILAG Akoka, inspect buildings and photographs, plan journeys, and prepare for offline use. Behind the public map, campus teams have a shared workspace for importing data, editing geometry, reviewing changes, and publishing approved releases.",
     features: [
       {
-        title: "Navigation that stays on the device",
+        title: "Two campuses, one explorer",
         description:
-          "Local place search and worker-based A* routing support walking directions, route alternatives, foreground GPS guidance, and spoken maneuvers.",
+          "A globe and campus directory connect separate LASU and UNILAG maps. Search, saved places, shared destinations, visitor layers, and 2D/3D views retain the selected campus’s identity.",
       },
       {
-        title: "A campus with depth",
+        title: "Walking and driving, connected",
         description:
-          "MapLibre and Three.js bring together paths, place details, and enhanced building models, with simpler rendering available when needed.",
+          "On-device routing supports walking and driving, foreground GPS, spoken instructions, and deviation handling. Driving accounts for mapped vehicle restrictions, parking, and a walking handoff where available.",
       },
       {
         title: "Offline, with a way back",
         description:
-          "Verified package downloads, resumable updates, and integrity repair make the offline experience explicit and recoverable.",
+          "Each campus has a verified download for maps, search, routing, and recorded guidance. Resumable updates preserve the active journey and the last valid package until the replacement is ready.",
       },
       {
-        title: "An editor behind the map",
+        title: "A complete GIS workspace",
         description:
-          "A private owner workspace supports geometry and building edits, undo/redo, conflict review, and reviewed map releases.",
+          "Data, Edit, Analyze, Review, and Publish workspaces bring together GIS imports, attribute tables, precision drawing, spatial analysis, and map exports, with campus-scoped roles and draft recovery.",
+      },
+      {
+        title: "Buildings backed by references",
+        description:
+          "Building authoring combines footprints, roofs, façades, mesh components, and reference photographs. Local photo editing and private walking surveys help teams prepare visual and field evidence for review.",
+      },
+      {
+        title: "Review before release",
+        description:
+          "Source comparisons preserve editor corrections and hold proposed changes for review. Immutable snapshots, independent approval, and campus-specific restore keep working drafts separate from published maps.",
       },
     ],
     approach:
-      "The public map and owner editor share campus data and rendering rules. Search, navigation audio, and route calculation run on the device; background workers keep heavier routing and model work away from the interface. Published campus packages are separate from working drafts, so an edit does not silently become a public map change.",
-    note: "An independent, non-commercial project, not an official LASU service. Campus routes have not been field-verified; modeled details may include illustrative estimates, and a mapped approach is not a confirmed entrance.",
+      "React and TypeScript connect the public PWA and private editor. MapLibre and Three.js render maps and building models; IndexedDB and the service worker manage recovery and verified offline packages. Supabase/PostGIS stores campus work, roles, and review records, while isolated Python workers process GIS imports and analysis. A shared npm workspace, pinned development containers, and unit, browser, and native GIS checks support ongoing maintenance.",
+    note: "An independent project, not an official university service. Routes and entrances still require field verification; modeled dimensions may be estimated or illustrative. Navigation runs in the foreground, without cross-campus routing, indoor navigation, or a verified step-free guarantee. Editor screenshots show local demonstrations; some source-import workflows still require staged production enablement.",
   },
   {
     slug: "rjwf",
@@ -85,7 +102,7 @@ export const projectsData: Project[] = [
     category: "Nonprofit · Website & CMS",
     headline: "A digital home for care and community.",
     description:
-      "A public website and private content studio for RemmyJ Wellness Foundation, connecting its programs, community work, and ways to get involved.",
+      "A nonprofit website with a guided content studio and private submissions inbox, helping RemmyJ Wellness Foundation publish its work and manage community enquiries.",
     tech: ["React", "Vite", "PostgreSQL", "Vercel Blob"],
     demo: "https://remmyjwellnessfoundation.org",
     color: "#e7ca87",
@@ -108,27 +125,27 @@ export const projectsData: Project[] = [
       },
     ],
     overview:
-      "RJWF needed a place to explain its work and help people find the right way to participate. The project combines a responsive nonprofit website with a private content studio, giving the foundation a structured way to maintain its public information.",
+      "RJWF brings the foundation’s programs, community work, and participation routes into one public website. Its redesigned Content Studio gives administrators a guided way to edit pages, maintain collections, and follow up on contact, partnership, beneficiary, and volunteer submissions from a private inbox.",
     features: [
       {
         title: "A clear public journey",
         description:
-          "Dedicated pages cover programs, projects, galleries, volunteering, partnerships, donations, transparency, and contact information.",
+          "Dedicated pages cover programs, projects, galleries, volunteering, partnerships, donations, and transparency. Prerendered HTML and a generated sitemap make public information discoverable.",
       },
       {
-        title: "Editing in context",
+        title: "A guided content studio",
         description:
-          "The private content studio includes a visual page builder with responsive previews, section ordering, reusable blocks, and click-to-edit content.",
+          "Labelled section fields, responsive previews, drag or button-based ordering, and reusable text, image, CTA, and card blocks make page editing approachable on desktop and mobile.",
       },
       {
         title: "Content with a publishing workflow",
         description:
-          "Draft and published states, revision restore, media records, and visibility controls support ongoing website maintenance.",
+          "Autosaved drafts, explicit publishing, revision restore, searchable collections, and reusable media let administrators maintain content and recover earlier versions.",
       },
       {
-        title: "Built to be discoverable",
+        title: "Enquiries with a place to go",
         description:
-          "Prerendered public pages and a generated sitemap provide crawlable HTML alongside the interactive React experience.",
+          "A private inbox collects contact, partnership, beneficiary, and volunteer submissions, with statuses, internal notes, recoverable trash, and duplicate-request protection.",
       },
     ],
     approach:
@@ -140,8 +157,14 @@ export const projectsData: Project[] = [
     category: "Creative · Portfolio & CMS",
     headline: "The work in focus. The tools behind it.",
     description:
-      "An image-led photography website with a database-backed gallery, content management, and first-party analytics for the person behind the lens.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+      "An image-led photography portfolio with a filterable gallery, editable services and visual identity, and first-party visitor analytics in a private CMS.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Vercel Blob",
+    ],
     demo: "https://photography-portfolio-amber-nine.vercel.app",
     github_link: "https://github.com/mrglasswillbreak/photographyPortfolio",
     color: "#c7b59d",
@@ -179,7 +202,7 @@ export const projectsData: Project[] = [
       {
         title: "An editable visual identity",
         description:
-          "Typography, site styling, and favicon settings can be managed through the dashboard without a new code deployment.",
+          "Typography controls include live previews for weights, emphasis, and spacing. Administrators can replace the favicon and update login credentials without a new code deployment.",
       },
       {
         title: "A view of visitor activity",
@@ -188,7 +211,7 @@ export const projectsData: Project[] = [
       },
     ],
     approach:
-      "Next.js connects the public portfolio and admin tools to PostgreSQL-backed content and Blob image storage. JWT sessions in HTTP-only cookies protect the management interface. The public experience uses responsive imagery, light and dark themes, and motion that supports the visual presentation.",
+      "Next.js connects the public portfolio and admin tools to PostgreSQL-backed content and Blob image storage. JWT sessions in HTTP-only cookies protect management routes, while Nodemailer delivers contact enquiries. Responsive imagery, a simplified hero image structure, theme controls, and loading states support the public experience.",
   },
   {
     slug: "fidarsi",
@@ -196,8 +219,8 @@ export const projectsData: Project[] = [
     category: "Corporate · Web platform",
     headline: "A considered presence. A connected platform.",
     description:
-      "A corporate website and registration platform for an African-founded proprietary trading firm, bringing its public story and protected workflows together.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Resend"],
+      "A corporate website and registration platform with verified email, role-based workspaces, private document handling, and administrator review for trader and academy applications.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Resend", "Vercel Blob"],
     demo: "https://fidarsica.org",
     color: "#a7c6be",
     images: [
@@ -229,7 +252,7 @@ export const projectsData: Project[] = [
       {
         title: "Registration with clear boundaries",
         description:
-          "Trader and academy registration use email verification, protected sessions, and role-based workspaces. Administrator access follows a separate invitation flow.",
+          "Trader and academy registration use email verification, protected sessions, and role-based workspaces. Administrator access uses time-limited invitations, with separate registration-review workflows.",
       },
       {
         title: "Private document workflows",
@@ -239,11 +262,11 @@ export const projectsData: Project[] = [
       {
         title: "Public pages, ready to share",
         description:
-          "Page metadata, canonical URLs, structured data, and social previews support the public website; private account routes stay out of the sitemap.",
+          "Canonical metadata, structured data, social previews, and newsroom article routes support discovery. Keyboard focus, a skip link, and reduced-motion support improve navigation; private account routes stay out of the sitemap.",
       },
     ],
     approach:
-      "Next.js App Router provides the public pages and server-side platform flows. PostgreSQL stores registration and session data, Resend handles transactional email, and private Blob storage supports verification documents. Public content and protected account actions have separate access and indexing rules.",
+      "Next.js App Router provides public pages and server-side account workflows. PostgreSQL stores registrations and sessions, Resend handles verification and invitation emails, and private Blob storage supports academy documents. Cloudflare Turnstile protects contact enquiries, while public content and protected account actions have separate access and indexing rules.",
   },
   {
     slug: "kinsous",
@@ -251,13 +274,14 @@ export const projectsData: Project[] = [
     category: "Marketplace · Food & community",
     headline: "A taste of home. A helping hand nearby.",
     description:
-      "A Nigeria-first culinary marketplace connecting food requests with local helpers, bringing discovery, bidding, private conversations, and order progress into one place.",
+      "A Nigeria-first culinary marketplace taking food requests through helper bids, private conversations, and order milestones, with NGN checkout workflows and an installable PWA.",
     tech: [
       "Next.js",
       "TypeScript",
       "PostgreSQL",
       "Tailwind CSS",
       "Vercel Blob",
+      "Flutterwave",
     ],
     demo: "https://kinsous2.vercel.app",
     github_link: "https://github.com/mrglasswillbreak/kinSous2",
@@ -305,7 +329,7 @@ export const projectsData: Project[] = [
       },
     ],
     approach:
-      "Next.js App Router connects the React interface to Neon PostgreSQL, authenticated sessions, and transactional order rules. Flutterwave integration handles checkout and payment verification, with Resend for email and private Vercel Blob storage for attachments. The service worker caches approved public assets while keeping private pages and APIs network-only.",
+      "Next.js App Router connects the interface to Neon PostgreSQL, authenticated sessions, and transactional order rules. Explicit, versioned migrations keep database setup out of user requests. Flutterwave handles checkout and verified payment events, with Resend for email and private Blob storage for attachments. The PWA caches approved public assets while keeping private pages and APIs network-only; account-scoped drafts clear on logout.",
     note: "A marketplace project with a hosted sign-in experience. Screenshots use local demonstration data, not customer activity. Live payments and delayed payouts require provider configuration and approval; audio/video calls and live GPS are deferred.",
   },
 ];

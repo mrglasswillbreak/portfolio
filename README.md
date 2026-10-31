@@ -8,13 +8,13 @@ A project-led portfolio for my full-stack development work, built with Next.js A
 
 ## Selected projects
 
-| Project               | Focus                                                                              | Case study                                                                 |
-| --------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| TurnRight             | LASU Ojo campus navigation, offline maps, routing, 3D buildings, and owner editing | [Read](https://mrglasswillbreak.vercel.app/projects/turnright)             |
-| RJWF                  | Nonprofit website and private visual content studio                                | [Read](https://mrglasswillbreak.vercel.app/projects/rjwf)                  |
-| Photography Portfolio | Photography gallery, CMS, and first-party analytics                                | [Read](https://mrglasswillbreak.vercel.app/projects/photography-portfolio) |
-| Fidarsi               | Corporate website and protected registration workflows                             | [Read](https://mrglasswillbreak.vercel.app/projects/fidarsi)               |
-| KinSous               | Culinary marketplace, bidding, private messaging, order workflows, and PWA         | [Read](https://mrglasswillbreak.vercel.app/projects/kinsous)               |
+| Project               | Focus                                                                            | Case study                                                                 |
+| --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| TurnRight             | LASU/UNILAG maps, walking/driving routes, offline packages, and team GIS editing | [Read](https://mrglasswillbreak.vercel.app/projects/turnright)             |
+| RJWF                  | Nonprofit website, guided content studio, and private submissions inbox          | [Read](https://mrglasswillbreak.vercel.app/projects/rjwf)                  |
+| Photography Portfolio | Photography gallery, CMS, and first-party analytics                              | [Read](https://mrglasswillbreak.vercel.app/projects/photography-portfolio) |
+| Fidarsi               | Corporate website and protected registration workflows                           | [Read](https://mrglasswillbreak.vercel.app/projects/fidarsi)               |
+| KinSous               | Culinary marketplace, bidding, private messaging, order workflows, and PWA       | [Read](https://mrglasswillbreak.vercel.app/projects/kinsous)               |
 
 The homepage and case studies use a shared, typed project catalog. Screenshots are local optimized WebP assets; their sources and capture details are documented in [SOURCES.md](public/images/projects/SOURCES.md). Only public repositories receive source-code links.
 
@@ -68,6 +68,8 @@ Messages are delivered to **mrglasswillbreak@gmail.com**. Invalid input is rejec
 The production branch is `master`, connected to the existing Vercel deployment. Verify the build and local preview before publishing. Metadata, sitemap, robots, social previews, and structured data use `https://mrglasswillbreak.vercel.app`.
 
 The GitHub profile README lives in the separate [mrGlassWillBreak repository](https://github.com/mrglasswillbreak/mrGlassWillBreak); its project images reference the public screenshot assets here.
+
+Project copy was reconciled against the remote default branches on 31 October 2026. See [repository sources](docs/project-sources.md) for the reviewed revisions and publication boundaries.
 
 ## Design and accessibility
 
